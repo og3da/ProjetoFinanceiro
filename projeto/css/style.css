@@ -6,55 +6,77 @@ body {
     margin: 0;
 }
 
+/* navbar conf */
 .navbar {
-  margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.700);
-  z-index: 9999;
-  border: 0;
-  font-size: 12px !important;
-  line-height: 1.42857143 !important;
-  letter-spacing: 4px;
-  border-radius: 0;
-  width: 100%;
-  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-family: Arial, sans-serif;
 }
 
-.navbar li a, .navbar .navbar-brand {
-color: whitesmoke !important;
+.navbar-brand a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-right: auto; /* Para posicionar o logo à esquerda */
 }
 
-.navbar-nav li a:hover, .navbar-nav li.active a {
-color: whitesmoke !important;
-background-color: red !important;
+.navbar-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.navbar-default .navbar-toggle {
-border-color: transparent;
-color: #fff !important;
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #ffbb33;
 }
 
 ul li {
-list-style-type: none;
-display: inline-block;
-}
+  list-style-type: none;
+  display: inline-block;
+  }
+/* navbar conf */
 
-.jumbotron {
-  background-color: rgb(53,74,95); 
+/* seção inicial conf */
+.inicial {
+  background-color: #2ad739; 
   color: whitesmoke;
-  padding: 100px 25px;
+  padding: 70px 25px;
+  height: 100vh;
 }
 
-.jumbotron button {
-  margin-left: 100px;
+.inicial img {
+  height: 100%;
+  width: 40%;
+}
+
+.inicial p {
+  font-size: 20px;
+}
+
+.inicial h1 {
+  font-size: 35px;
 }
 
 .alinhamento {
   width: 100%; 
   display: flex;
 }
+/* seção inicial conf */
 
+/* seção serviços conf */
 #services {
   padding: 65px;
+  height: 100vh;
 }
 
 .cartoes {
@@ -71,7 +93,7 @@ display: inline-block;
   overflow: hidden;
   width: 341px;
   height: 375px;
-  background-color: rgb(53,74,95);
+  background-color: #2ad739;
   color: whitesmoke;
 }
 
@@ -103,56 +125,37 @@ display: inline-block;
   color: black;
   text-align: center;
 }
+/* seção serviços conf */
 
-#portifolio {
-  background-color: rgb(53,74,95); 
-  padding: 65px;
-  color: whitesmoke;
-}
-
-.thumbnail {
-    padding: 0 0 20px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-top: 30px;
-}
-
-.thumbnail img {
-    width: 100%;
-    height: 50%;
-    margin-bottom: 20px;
-    margin: auto;
-    overflow: hidden;
-}
-
-#clients {
-  margin-top: 90px;
-  margin-bottom: 200px;
-  padding: 65px;
-}
-
+/* seção sobre conf */
 #about {
-  background-color: rgb(53,74,95); 
-  margin-top: 90px;
-  padding: 100px;
-  color: whitesmoke;
+  padding: 50px;
+  background-color: #2ad739;
+  height: 70vh; 
 }
 
-#about-text{
+#about-text {
   display: flex;
+  justify-content: center;
   align-items: center;
-  font-size: 18px;
-  text-align: justify;
-  margin-top: 90px;
 }
 
-#about-text img{
-  padding-left: 50px; 
+#about-text p {
+  font-size: 20px;
 }
 
+#about-text img {
+  width: 25%;
+  height: 40vh; /* Ajuste a altura conforme necessário */
+  display: block;
+  margin: 0 auto;
+}
+/* seção sobre conf */
+
+/* seção contato conf */
 #contact {
   padding: 50px;
+  height: 100vh;
   background-color: whitesmoke;
 }
 
@@ -195,27 +198,31 @@ input[type="text"]{
   padding: 6px;
   border-radius: 5px;
 }
+/* seção contato conf */
 
+/* SVG CONF */
 svg {
   height:15px;
 }
 
 #svg1:hover {
-  fill: rgb(11, 102, 206);
+  fill: rgb(0, 119, 255);
 }
 
 #svg2:hover {
-  fill: rgb(12, 12, 56);
+  fill: rgb(36, 36, 199);
 }
 
 #svg3:hover {
-  fill: rgb(41, 104, 187);
+  fill: rgb(0, 149, 255);
 }
 
 #svg4:hover {
-  fill: rgb(212, 5, 5);
+  fill: rgb(255, 0, 0);
 }
+/* SVG CONF */
 
+/* botão goTop */
 .go-top {
   position: fixed;
   width: 50px;
@@ -230,7 +237,9 @@ svg {
   color: whitesmoke;
   border-radius: 10px;
 }
+/* botão goTop */
 
+/* animação SlideAnim */
 .slideanim {visibility:hidden;}
 .slide {
   animation-name: slide;
@@ -260,3 +269,4 @@ svg {
     -webkit-transform: translateY(0%);
   }
 }
+/* animação SlideAnim */
