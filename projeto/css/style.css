@@ -36,14 +36,34 @@ body {
   transition: color 0.3s ease;
 }
 
-.navbar-links a:hover {
-  color: #ffbb33;
+nav ul li a:hover {
+  background-color: #33ff41;
 }
 
 ul li {
   list-style-type: none;
   display: inline-block;
-  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 /* navbar conf */
 
 /* seção inicial conf */
