@@ -1,0 +1,294 @@
+* {
+  font: "Montserrat", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+/* navbar conf */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.navbar-brand a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-right: auto; /* Para posicionar o logo à esquerda */
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #33ff41;
+}
+
+ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* navbar conf */
+
+/* seção inicial conf */
+.inicial {
+  background-color: #2ad739;
+  color: whitesmoke;
+  padding: 70px 25px;
+  height: 100vh;
+}
+
+.inicial img {
+  height: 100%;
+  width: 40%;
+}
+
+.inicial p {
+  font-size: 20px;
+}
+
+.inicial h1 {
+  font-size: 35px;
+}
+
+.alinhamento {
+  width: 100%;
+  display: flex;
+}
+/* seção inicial conf */
+
+/* seção serviços conf */
+#services {
+  padding: 65px;
+  height: 100vh;
+}
+
+.cartoes {
+  margin: 10px;
+  padding: 60px 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.cardEdit {
+  border-radius: 7px;
+  box-shadow: 3px 3px 7px rgb(0, 0, 0);
+  overflow: hidden;
+  width: 341px;
+  height: 375px;
+  background-color: #2ad739;
+  color: whitesmoke;
+}
+
+.cardImg {
+  margin: auto;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.cardImg img {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardDesc {
+  width: 230px;
+  height: 150px;
+  margin: auto;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.cardDesc h4 {
+  color: black;
+  text-align: center;
+}
+/* seção serviços conf */
+
+/* seção sobre conf */
+#about {
+  padding: 50px;
+  background-color: #2ad739;
+  height: 70vh;
+}
+
+#about-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about-text p {
+  font-size: 20px;
+}
+
+#about-text img {
+  width: 25%;
+  height: 40vh; /* Ajuste a altura conforme necessário */
+  display: block;
+  margin: 0 auto;
+}
+/* seção sobre conf */
+
+/* seção contato conf */
+#contact {
+  padding: 50px;
+  height: 100vh;
+  background-color: whitesmoke;
+}
+
+.alinhamento2 {
+  width: 100%;
+  display: flex;
+  padding: 75px;
+  align-items: center;
+}
+
+.alinhamento p {
+  float: right;
+  margin-top: 90px;
+}
+
+form {
+  font: "Montserrat", sans-serif;
+  font-size: 18px;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.form-group {
+  margin: 7px auto;
+}
+
+label {
+  width: 150px;
+  display: inline-block;
+}
+
+input[type="text"] {
+  padding: 6px;
+  border-radius: 5px;
+}
+/* seção contato conf */
+
+/* SVG CONF */
+svg {
+  height: 15px;
+}
+
+#svg1:hover {
+  fill: rgb(0, 119, 255);
+}
+
+#svg2:hover {
+  fill: rgb(36, 36, 199);
+}
+
+#svg3:hover {
+  fill: rgb(0, 149, 255);
+}
+
+#svg4:hover {
+  fill: rgb(255, 0, 0);
+}
+/* SVG CONF */
+
+/* botão goTop */
+.go-top {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  bottom: 40px;
+  right: 50px;
+
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  color: whitesmoke;
+  border-radius: 10px;
+}
+/* botão goTop */
+
+/* animação SlideAnim */
+.slideanim {
+  visibility: hidden;
+}
+.slide {
+  animation-name: slide;
+  -webkit-animation-name: slide;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  visibility: visible;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+  }
+}
+/* animação SlideAnim */
