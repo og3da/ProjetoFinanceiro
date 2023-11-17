@@ -1,17 +1,10 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <title>Educação financeira</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="{% static 'style.css' %}">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+{% extends "master.html" %}
 
-</head>
-<body id="topo" data-spy="scroll" data-target=".navbar" data-offset="60">
+{% block title %}
+  EDUCAÇÃO FINANCEIRA
+{% endblock %}
+
+{% block content %}
     <div id="home" class="container-fluid">
        <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container">
@@ -57,7 +50,7 @@
     </div>
 
     <div class="inicial">
-        <h1 style="text-align: center;">EDUCAÇÃO FINCEIRA GRATUITA </h1>
+        <h1 style="text-align: center;">EDUCAÇÃO FINANCEIRA GRATUITA </h1>
         <p style="text-align: center;">Para se preparar para o futuro, não tem idade!</p> 
         <div class="alinhamento">
           <img src="../static/img/principal.png" alt="macbook" style="padding: 35px;"> 
@@ -146,6 +139,5 @@ Estratégias para economizar dinheiro: Ideias práticas para reduzir despesas e 
     <a class="go-top" href="#topo" data-toggle="tooltip" title="TO TOP">
       <span class="glyphicon glyphicon-chevron-up" style="color:whitesmoke;"></span>
     </a><br>
-
-</body>
-</html>
+    
+{% endblock %}
