@@ -1,0 +1,127 @@
+/* Estilo geral da página */
+html {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Estilo do cabeçalho */
+.container-fluid {
+  background-color: #2ad739;
+  color: white;
+}
+
+.navbar {
+  padding: 10px;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand svg {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
+.navbar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.navbar-nav li a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav li a svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.navbar-nav li a:hover {
+  color: #45a049;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgb(255, 0, 0);
+  color: black;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Estilo do conteúdo principal */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.overview {
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.tips-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.tip {
+  background-color: #e6e6e6;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.tip h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.tip p {
+  font-size: 18px;
+}
