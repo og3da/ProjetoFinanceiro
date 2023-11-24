@@ -37,7 +37,7 @@ body {
 }
 
 nav ul li a:hover {
-  background-color: #33ff41;
+  background-color: #27a52f;
 }
 
 ul li {
@@ -68,7 +68,7 @@ ul li {
 
 /* seção inicial conf */
 .inicial {
-  background-color: #2ad739; 
+  background-color: #27a52f; 
   color: whitesmoke;
   padding: 70px 25px;
   height: 100vh;
@@ -113,7 +113,7 @@ ul li {
   overflow: hidden;
   width: 341px;
   height: 375px;
-  background-color: #2ad739;
+  background-color: #27a52f;
   color: whitesmoke;
 }
 
@@ -150,7 +150,7 @@ ul li {
 /* seção sobre conf */
 #about {
   padding: 50px;
-  background-color: #2ad739;
+  background-color: #27a52f;
   height: 70vh; 
 }
 

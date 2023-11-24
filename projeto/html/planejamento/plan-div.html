@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <title>Calculadora Salário Líquido</title>
+    <title>Como renegociar dividas</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -10,6 +10,38 @@
     <link rel="stylesheet" href="../../css/form.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 70px;
+      }
+      h1 {
+        text-align: center;
+      }
+      .container {
+        width: 100%;
+        max-width: 100%;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      p {
+        line-height: 1.6;
+      }
+      .investments-section {
+        margin-top: 20px;
+      }
+      .investment-type {
+        margin-bottom: 20px;
+      }
+      .investment-type h3 {
+        margin-bottom: 10px;
+      }
+    </style>
 </head>
 
 <body>
@@ -56,8 +88,7 @@
                                         d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.6 483.2 483.9 512 448.5 512H128.1C92.75 512 64.09 483.3 64.09 448V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5H575.8zM288 160C252.7 160 224 188.7 224 224C224 259.3 252.7 288 288 288C323.3 288 352 259.3 352 224C352 188.7 323.3 160 288 160zM256 320C211.8 320 176 355.8 176 400C176 408.8 183.2 416 192 416H384C392.8 416 400 408.8 400 400C400 355.8 364.2 320 320 320H256z" />
                                 </svg> PLANEJAMENTO FINANCEIRO </a>
                             <div class="dropdown-content">
-                                <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/planejamento/plan-eco.html">Aprenda a economizar</a>
-                                <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/planejamento/plan-div.html">Como renegociar dividas</a>
+                              <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/planejamento/plan-eco.html">Aprenda a economizar</a>
                             </div>
                         </li>
                         <li class="dropdown">
@@ -79,7 +110,8 @@
                                         d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 400c-18 0-32-14-32-32s13.1-32 32-32c17.1 0 32 14 32 32S273.1 400 256 400zM325.1 258L280 286V288c0 13-11 24-24 24S232 301 232 288V272c0-8 4-16 12-21l57-34C308 213 312 206 312 198C312 186 301.1 176 289.1 176h-51.1C225.1 176 216 186 216 198c0 13-11 24-24 24s-24-11-24-24C168 159 199 128 237.1 128h51.1C329 128 360 159 360 198C360 222 347 245 325.1 258z" />
                                 </svg> CALCULADORAS </a>
                             <div class="dropdown-content">
-                                <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-imp-renda.html">Imposto de Renda</a>
+                                <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-sal-liquido.html">Salário Líquido</a>
+                                <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-imp-renda.html">Imposto de renda</a>
                                 <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-ferias.html">Férias</a>
                             </div>
                         </li>
@@ -88,52 +120,46 @@
             </div>
         </nav>
     </div>
-
-    <div id="inicial-calc-sal-liquido" class="container-fluid">
-        <h1>Bem-vindo à nossa Calculadora de Salário Líquido! </h1><br>
-        <p>Essa ferramenta foi projetada para ajudá-lo a calcular o valor líquido do seu salário após os descontos
-            obrigatórios, como impostos e contribuições. Basta preencher as informações solicitadas abaixo e obtenha uma
-            estimativa do seu salário líquido.</p><br>
-
-        <form id="salaryCalculatorForm">
-            <label for="salary">Salário Bruto (R$):</label>
-            <input type="number" id="salary" name="salary" required>
-
-            <label for="dependents">Dependentes:</label>
-            <input type="number" id="dependents" name="dependents">
-
-            <label for="otherDeductions">Outros Descontos (R$):</label>
-            <input type="number" id="otherDeductions" name="otherDeductions">
-
-            <button type="submit">Calcular Salário Líquido</button>
-        </form>
-        <hr id="myHr">
-
-        <div id="resultContainer">
-            <table id="resultTable">
-                <tr>
-                    <th>Descrição</th>
-                    <th>Valor</th>
-                </tr>
-                <tr>
-                    <td>Salário Bruto</td>
-                    <td id="grossSalary"></td>
-                </tr>
-                <tr>
-                    <td>Impostos e Deduções</td>
-                    <td id="taxesAndDeductions"></td>
-                </tr>
-                <tr>
-                    <td>Salário Líquido</td>
-                    <td id="netSalary"></td>
-                </tr>
-            </table>
+    <div class="container">
+      <h1>Como renegociar dívidas</h1>
+      
+      <div class="overview">
+        <p>Renegociar dívidas pode ser uma estratégia importante para resolver problemas financeiros. Aqui estão alguns passos a considerar ao tentar renegociar suas dívidas:</p>
+      </div>
+    
+      <div class="steps-section">
+        <div class="step">
+          <h3>Análise Financeira</h3>
+          <p>Avalie sua situação financeira atual, identificando todas as dívidas, valores devidos e suas condições.</p>
         </div>
-
-
+        
+        <div class="step">
+          <h3>Contato com Credores</h3>
+          <p>Entre em contato com os credores para discutir opções de pagamento, seja por telefone, e-mail ou pessoalmente.</p>
+        </div>
+        
+        <div class="step">
+          <h3>Negociação de Condições</h3>
+          <p>Proponha novas condições de pagamento, como parcelamentos, redução de juros ou até mesmo descontos para quitação.</p>
+        </div>
+        
+        <div class="step">
+          <h3>Acordo Formal</h3>
+          <p>Após chegar a um acordo com o credor, obtenha o acordo por escrito para garantir clareza e cumprimento das novas condições.</p>
+        </div>
+      </div>
+    
+      <div class="tips">
+        <h2>Dicas para Renegociar Dívidas</h2>
+        <ul>
+          <li>Seja honesto sobre sua situação financeira ao negociar.</li>
+          <li>Tente negociar dentro de suas possibilidades, oferecendo propostas realistas de pagamento.</li>
+          <li>Busque a ajuda de profissionais financeiros ou de órgãos de defesa do consumidor, se necessário.</li>
+          <li>Esteja preparado para ouvir as contrapropostas dos credores e buscar um acordo que beneficie ambas as partes.</li>
+        </ul>
+      </div>
     </div>
-    <script type="text/javascript" src="../../js/form_calc-sal-liquido.js">
-    </script>
+    
 </body>
 
 </html>
