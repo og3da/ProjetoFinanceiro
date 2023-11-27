@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap");
 * {
-  font: "Montserrat", sans-serif;
-}
-
-body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans", sans-serif;
 }
 
 /* navbar conf */
@@ -12,7 +14,7 @@ body {
   justify-content: space-between;
   align-items: center;
   color: #fff;
-  font-family: Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .navbar-brand a {
@@ -162,6 +164,7 @@ ul li {
 
 #about-text p {
   font-size: 20px;
+  color: whitesmoke;
 }
 
 #about-text img {
@@ -192,7 +195,7 @@ ul li {
 }
 
 form {
-  font: "Montserrat", sans-serif;
+  font: "Open Sans", sans-serif;
   font-size: 18px;
 }
 
