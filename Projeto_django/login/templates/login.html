@@ -63,12 +63,7 @@
           <p class="description description-second">
             ou use email para cadastrar:
           </p>
-          <form
-            class="form"
-            id="registrationForm"
-            method="POST"
-            action="{% url 'cadastrar_usuario' %}"
-          >
+          <form class="form" id="registrationForm" method="POST" action="{% url 'cadastrar_usuario' %}">
             {% csrf_token %}
             <label class="label-input" for="nome">
               <i class="far fa-user icon-modify"></i>
@@ -83,12 +78,7 @@
 
             <label class="label-input" for="senha">
               <i class="fas fa-lock icon-modify"></i>
-              <input
-                type="password"
-                id="senha"
-                name="senha"
-                placeholder="Senha"
-              />
+              <input type="password" id="senha" name="senha" placeholder="Senha"/>
             </label>
 
             <button class="btn btn-second" type="submit">cadastrar</button>
@@ -128,19 +118,20 @@
           </div>
           <!-- social media -->
           <p class="description description-second">ou use seu email:</p>
-          <form class="form">
+          <form class="form" id="loginForm" method="POST" action="{% url 'login_usuario' %}">
+            {% csrf_token %}
             <label class="label-input" for="">
               <i class="far fa-envelope icon-modify"></i>
-              <input type="email" placeholder="Email" />
+              <input type="email" id="email" name="email" placeholder="Email" />
             </label>
 
             <label class="label-input" for="">
               <i class="fas fa-lock icon-modify"></i>
-              <input type="password" placeholder="Senha" />
+              <input type="password" id="senha" name="senha" placeholder="Senha" />
             </label>
 
             <a class="password" href="#">esqueceu a senha?</a>
-            <button class="btn btn-second">login</button>
+            <button class="btn btn-second" type="submit">login</button>
           </form>
         </div>
         <!-- second column -->

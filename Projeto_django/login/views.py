@@ -47,3 +47,37 @@ def cadastrar_usuario(request):
     # Retorna uma resposta indicando que a requisição não é válida (não é um POST)
     mensagem = "Método de requisição não permitido.!"
     return render(request, 'login.html', {'mensagem': mensagem})
+
+@csrf_exempt
+def login_usuario(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        senha = request.POST.get('senha')
+
+        print()
+        print("----- LOGS")
+        if not email or not senha:
+            # Retorna uma resposta indicando que o cadastro falhou
+            print("Todos os campos são obrigatórios. Preencha todos os campos.")
+            mensagem = "Todos os campos são obrigatórios. Preencha todos os campos."
+            return render(request, 'login.html', {'mensagem': mensagem})
+
+        # Verifique se o email já está em uso
+        if not Usuario.objects.filter(email=email).exists():
+            print("O email não existe, cadastre-se!")
+            mensagem = "O email não existe, cadastre-se!"
+            return render(request, 'login.html', {'mensagem': mensagem})
+
+        # Verifique se a senha já está em uso
+        if not Usuario.objects.filter(senha=senha).exists():
+            print("Senha incorreta!")
+            mensagem = "Senha incorreta!"
+            return render(request, 'login.html', {'mensagem': mensagem})
+        
+        print("Login Realizado!")
+        mensagem = "Login Realizado!"
+        return render(request, 'home.html', {'mensagem': mensagem})
+
+    # Retorna uma resposta indicando que a requisição não é válida (não é um POST)
+    mensagem = "Método de requisição não permitido.!"
+    return render(request, 'login.html', {'mensagem': mensagem})
