@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{% static 'style-login.css' %}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
@@ -23,20 +24,22 @@
   </head>
 
   <body>
+    {% if mensagem %}
+    <script>
+      alert("{{ mensagem }}");
+    </script>
+    {% endif %}
     <div class="container">
       <div class="content first-content">
         <div class="first-column">
-          <h2 class="title title-primary">welcome back!</h2>
+          <h2 class="title title-primary">Bem Vindo de volta!</h2>
           <p class="description description-primary">
-            To keep connected with us
+            Para se conectar faça login
           </p>
-          <p class="description description-primary">
-            please login with your personal info
-          </p>
-          <button id="signin" class="btn btn-primary">sign in</button>
+          <button id="signin" class="btn btn-primary">login</button>
         </div>
         <div class="second-column">
-          <h2 class="title title-second">create account</h2>
+          <h2 class="title title-second">cadastrar</h2>
           <div class="social-media">
             <ul class="list-social-media">
               <a class="link-social-media" href="#">
@@ -58,25 +61,37 @@
           </div>
           <!-- social media -->
           <p class="description description-second">
-            or use your email for registration:
+            ou use email para cadastrar:
           </p>
-          <form class="form">
-            <label class="label-input" for="">
+          <form
+            class="form"
+            id="registrationForm"
+            method="POST"
+            action="{% url 'cadastrar_usuario' %}"
+          >
+            {% csrf_token %}
+            <label class="label-input" for="nome">
               <i class="far fa-user icon-modify"></i>
-              <input type="text" placeholder="Name" />
+              <input type="text" id="nome" name="nome" placeholder="Nome" />
             </label>
 
-            <label class="label-input" for="">
+            <label class="label-input" for="email">
               <i class="far fa-envelope icon-modify"></i>
-              <input type="email" placeholder="Email" />
+              <input type="email" id="email" name="email" placeholder="Email" />
+              <span id="emailError" style="color: red"></span>
             </label>
 
-            <label class="label-input" for="">
+            <label class="label-input" for="senha">
               <i class="fas fa-lock icon-modify"></i>
-              <input type="password" placeholder="Password" />
+              <input
+                type="password"
+                id="senha"
+                name="senha"
+                placeholder="Senha"
+              />
             </label>
 
-            <button class="btn btn-second">sign up</button>
+            <button class="btn btn-second" type="submit">cadastrar</button>
           </form>
         </div>
         <!-- second column -->
@@ -84,17 +99,14 @@
       <!-- first content -->
       <div class="content second-content">
         <div class="first-column">
-          <h2 class="title title-primary">hello, friend!</h2>
+          <h2 class="title title-primary">olá, amigo!</h2>
           <p class="description description-primary">
-            Enter your personal details
+            Cadastre-se usando poucas informações
           </p>
-          <p class="description description-primary">
-            and start journey with us
-          </p>
-          <button id="signup" class="btn btn-primary">sign up</button>
+          <button id="signup" class="btn btn-primary">cadastrar</button>
         </div>
         <div class="second-column">
-          <h2 class="title title-second">sign in to developer</h2>
+          <h2 class="title title-second">Login</h2>
           <div class="social-media">
             <ul class="list-social-media">
               <a class="link-social-media" href="#">
@@ -115,9 +127,7 @@
             </ul>
           </div>
           <!-- social media -->
-          <p class="description description-second">
-            or use your email account:
-          </p>
+          <p class="description description-second">ou use seu email:</p>
           <form class="form">
             <label class="label-input" for="">
               <i class="far fa-envelope icon-modify"></i>
@@ -126,11 +136,11 @@
 
             <label class="label-input" for="">
               <i class="fas fa-lock icon-modify"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Senha" />
             </label>
 
-            <a class="password" href="#">forgot your password?</a>
-            <button class="btn btn-second">sign in</button>
+            <a class="password" href="#">esqueceu a senha?</a>
+            <button class="btn btn-second">login</button>
           </form>
         </div>
         <!-- second column -->
