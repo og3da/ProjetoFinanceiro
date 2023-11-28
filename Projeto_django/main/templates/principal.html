@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'style-pen.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+<body id="topo" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <h1 style="text-align: center; color: #58af9b; font-size: 50px;">EDUCAÇÃO FINANCEIRA GRATUITA</h1>
+
+    <div class="void" id="void">
+        <div class="crop">
+            <ul id="card-list" style="--count: 6;">
+                <li><div class="card"><a href="{% url 'home' %}"><span class="model-name">PAGINA PRINCIPAL</span><span>entrar na página de conteúdos</span></a></div></li>
+                <li><div class="card"><a href="{% url 'login' %}"><span class="model-name">CADASTRO</span><span>cadastrar-se como usuario</span></a></div></li>
+                <li><div class="card"><a href="{% url 'login' %}"><span class="model-name">LOGIN</span><span>realizar login no sistema</span></a></div></li>
+            </ul>
+            <div class="last-circle"></div>
+            <div class="second-circle"></div>
+        </div>
+        <div class="mask"></div>
+        <div class="center-circle"></div>
+    </div>
+</body>
+
+</html>
+
