@@ -1,0 +1,145 @@
+<!-- {% extends "master.html" %} 
+{% block title %} LOGIN {% endblock %} 
+
+{% block content %} -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>LOGIN</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="{% static 'style-login.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    {% if mensagem %}
+    <script>
+      alert("{{ mensagem }}");
+    </script>
+    {% endif %}
+    <div class="container">
+      <div class="content first-content">
+        <div class="first-column">
+          <h2 class="title title-primary">Bem Vindo de volta!</h2>
+          <p class="description description-primary">
+            Para se conectar faça login
+          </p>
+          <button id="signin" class="btn btn-primary">login</button>
+        </div>
+        <div class="second-column">
+          <h2 class="title title-second">cadastrar</h2>
+          <div class="social-media">
+            <ul class="list-social-media">
+              <a class="link-social-media" href="#">
+                <li class="item-social-media">
+                  <i class="fab fa-facebook-f"></i>
+                </li>
+              </a>
+              <a class="link-social-media" href="#">
+                <li class="item-social-media">
+                  <i class="fab fa-google-plus-g"></i>
+                </li>
+              </a>
+              <a class="link-social-media" href="#">
+                <li class="item-social-media">
+                  <i class="fab fa-linkedin-in"></i>
+                </li>
+              </a>
+            </ul>
+          </div>
+          <!-- social media -->
+          <p class="description description-second">
+            ou use email para cadastrar:
+          </p>
+          <form class="form" id="registrationForm" method="POST" action="{% url 'cadastrar_usuario' %}">
+            {% csrf_token %}
+            <label class="label-input" for="nome">
+              <i class="far fa-user icon-modify"></i>
+              <input type="text" id="nome" name="nome" placeholder="Nome" />
+            </label>
+
+            <label class="label-input" for="email">
+              <i class="far fa-envelope icon-modify"></i>
+              <input type="email" id="email" name="email" placeholder="Email" />
+              <span id="emailError" style="color: red"></span>
+            </label>
+
+            <label class="label-input" for="senha">
+              <i class="fas fa-lock icon-modify"></i>
+              <input type="password" id="senha" name="senha" placeholder="Senha"/>
+            </label>
+
+            <button class="btn btn-second" type="submit">cadastrar</button>
+          </form>
+        </div>
+        <!-- second column -->
+      </div>
+      <!-- first content -->
+      <div class="content second-content">
+        <div class="first-column">
+          <h2 class="title title-primary">olá, amigo!</h2>
+          <p class="description description-primary">
+            Cadastre-se usando poucas informações
+          </p>
+          <button id="signup" class="btn btn-primary">cadastrar</button>
+        </div>
+        <div class="second-column">
+          <h2 class="title title-second">Login</h2>
+          <div class="social-media">
+            <ul class="list-social-media">
+              <a class="link-social-media" href="#">
+                <li class="item-social-media">
+                  <i class="fab fa-facebook-f"></i>
+                </li>
+              </a>
+              <a class="link-social-media" href="#">
+                <li class="item-social-media">
+                  <i class="fab fa-google-plus-g"></i>
+                </li>
+              </a>
+              <a class="link-social-media" href="#">
+                <li class="item-social-media">
+                  <i class="fab fa-linkedin-in"></i>
+                </li>
+              </a>
+            </ul>
+          </div>
+          <!-- social media -->
+          <p class="description description-second">ou use seu email:</p>
+          <form class="form" id="loginForm" method="POST" action="{% url 'login_usuario' %}">
+            {% csrf_token %}
+            <label class="label-input" for="">
+              <i class="far fa-envelope icon-modify"></i>
+              <input type="email" id="email" name="email" placeholder="Email" />
+            </label>
+
+            <label class="label-input" for="">
+              <i class="fas fa-lock icon-modify"></i>
+              <input type="password" id="senha" name="senha" placeholder="Senha" />
+            </label>
+
+            <a class="password" href="#">esqueceu a senha?</a>
+            <button class="btn btn-second" type="submit">login</button>
+          </form>
+        </div>
+        <!-- second column -->
+      </div>
+      <!-- second-content -->
+    </div>
+    <script src="../static/app.js"></script>
+  </body>
+</html>
+
+<!-- {% endblock %} -->
