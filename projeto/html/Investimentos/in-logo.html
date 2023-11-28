@@ -7,40 +7,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/form.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <style>
       body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 70px;
+            font-family: Arial, sans-serif;
+            background-color: #182D4A;
+            margin: 0;
+            color: #FFFFFF;
+        }
+
+        h1 {
+            color: #FFFFFF;
+            background-color: #182D4A;
+            padding: 25px;
+            text-align: center;
+        }
+
+        p {
+            color: #FFFFFF;
+            margin: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        td,
+        th {
+            border: 1px solid #FFFFFF;
+            padding: 10px;
+        }
+
+        p:last-of-type {
+            color: #FFFFFF;
+            background-color: #182D4A;
+            padding: 10px;
+            text-align: center;
+        }
+        @keyframes escrevendo {
+      from {
+        width: 0;
+        text-shadow: 2px 2px 2px #888;
       }
-      h1 {
-        text-align: center;
-      }
-      .container {
+      to {
         width: 100%;
-        max-width: 100%;
-        background-color: #fff;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
-      p {
-        line-height: 1.6;
-      }
-      .investments-section {
-        margin-top: 20px;
-      }
-      .investment-type {
-        margin-bottom: 20px;
-      }
-      .investment-type h3 {
-        margin-bottom: 10px;
-      }
+    }
     </style>
 </head>
 
@@ -51,7 +67,6 @@
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"></button>
                     <a class="navbar-brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                            <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                             <path
                                 d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z" />
                         </svg> EDUCAÇÃO FINANCEIRA </a>
@@ -59,22 +74,18 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-left">
                         <li><a href="../fatec.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                                     <path
                                         d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.6 483.2 483.9 512 448.5 512H128.1C92.75 512 64.09 483.3 64.09 448V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5H575.8zM288 160C252.7 160 224 188.7 224 224C224 259.3 252.7 288 288 288C323.3 288 352 259.3 352 224C352 188.7 323.3 160 288 160zM256 320C211.8 320 176 355.8 176 400C176 408.8 183.2 416 192 416H384C392.8 416 400 408.8 400 400C400 355.8 364.2 320 320 320H256z" />
                                 </svg> </a></li>
                         <li><a href="#services"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                                     <path
                                         d="M256 48C256 21.49 277.5 0 304 0H592C618.5 0 640 21.49 640 48V464C640 490.5 618.5 512 592 512H381.3C383 506.1 384 501.6 384 496V253.3C402.6 246.7 416 228.9 416 208V176C416 149.5 394.5 128 368 128H256V48zM571.3 347.3C577.6 341.1 577.6 330.9 571.3 324.7L507.3 260.7C501.1 254.4 490.9 254.4 484.7 260.7L420.7 324.7C414.4 330.9 414.4 341.1 420.7 347.3C426.9 353.6 437.1 353.6 443.3 347.3L480 310.6V432C480 440.8 487.2 448 496 448C504.8 448 512 440.8 512 432V310.6L548.7 347.3C554.9 353.6 565.1 353.6 571.3 347.3H571.3zM0 176C0 167.2 7.164 160 16 160H368C376.8 160 384 167.2 384 176V208C384 216.8 376.8 224 368 224H16C7.164 224 0 216.8 0 208V176zM352 480C352 497.7 337.7 512 320 512H64C46.33 512 32 497.7 32 480V256H352V480zM144 320C135.2 320 128 327.2 128 336C128 344.8 135.2 352 144 352H240C248.8 352 256 344.8 256 336C256 327.2 248.8 320 240 320H144z" />
                                 </svg> </a></li>
                         <li><a href="#about"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                                     <path
                                         d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 400c-18 0-32-14-32-32s13.1-32 32-32c17.1 0 32 14 32 32S273.1 400 256 400zM325.1 258L280 286V288c0 13-11 24-24 24S232 301 232 288V272c0-8 4-16 12-21l57-34C308 213 312 206 312 198C312 186 301.1 176 289.1 176h-51.1C225.1 176 216 186 216 198c0 13-11 24-24 24s-24-11-24-24C168 159 199 128 237.1 128h51.1C329 128 360 159 360 198C360 222 347 245 325.1 258z" />
                                 </svg> </a></li>
                         <li><a href="#contact"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                                     <path
                                         d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z" />
                                 </svg> </a></li>
@@ -83,7 +94,6 @@
                         <li class="dropdown">
                             <!--PLANEJAMENTO FINANCEIRO -->
                             <a href="#" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                                     <path
                                         d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.6 483.2 483.9 512 448.5 512H128.1C92.75 512 64.09 483.3 64.09 448V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5H575.8zM288 160C252.7 160 224 188.7 224 224C224 259.3 252.7 288 288 288C323.3 288 352 259.3 352 224C352 188.7 323.3 160 288 160zM256 320C211.8 320 176 355.8 176 400C176 408.8 183.2 416 192 416H384C392.8 416 400 408.8 400 400C400 355.8 364.2 320 320 320H256z" />
                                 </svg> PLANEJAMENTO FINANCEIRO </a>
@@ -120,46 +130,127 @@
             </div>
         </nav>
     </div>
-    <div class="container">
-      <h1>Investimentos a Longo Prazo</h1>
-      
-      <div class="overview">
-        <h2>Descrição</h2>
-        <p>Investimentos a longo prazo são estratégias financeiras em que indivíduos alocam recursos com a intenção de obter retornos significativos após um período extenso, geralmente superior a cinco anos. Esses investimentos visam a construção de riqueza ao longo do tempo, aproveitando o poder dos juros compostos e a valorização de ativos.</p>
-        
-        <h2>Vantagens</h2>
-        <ul>
-          <li>Potencial de crescimento substancial do capital investido.</li>
-          <li>Exploração dos benefícios dos juros compostos.</li>
-          <li>Redução do impacto de oscilações de curto prazo no mercado.</li>
-          <li>Oportunidade de diversificação em diferentes classes de ativos.</li>
-        </ul>
-      </div>
-    
-      <div class="investments-section">
-        <h2>Tipos Comuns de Investimentos a Longo Prazo</h2>
-        
-        <div class="investment-type">
-          <h3>Fundos de Investimento</h3>
-          <p>Fundos de investimento oferecem a possibilidade de investir em uma carteira diversificada de ativos, como ações, títulos e imóveis, gerenciados por profissionais.</p>
+    <h1 style="font-family: 'Arial Black', sans-serif; font-size: 3em; color: #fdfdfd; text-transform: uppercase; text-align: center; animation: escrevendo 4s steps(40) forwards;">Investimentos a longo prazo</h1>
+    <p>Investir a longo prazo é uma estratégia que visa obter retornos maiores e mais consistentes ao longo do tempo,
+        sem se preocupar com as oscilações do mercado no curto prazo. Investir a longo prazo requer paciência,
+        disciplina e planejamento, mas pode trazer muitos benefícios para quem quer construir um patrimônio sólido e
+        garantir uma renda futura.</p>
+        <div style="text-align: center;">
+            <img src="C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/img/int-longo.png" alt="Minha Imagem" style="display: inline-block;">
         </div>
-        
-        <div class="investment-type">
-          <h3>Previdência Privada</h3>
-          <p>A previdência privada é uma forma de planejar a aposentadoria, geralmente oferecendo benefícios fiscais e permitindo contribuições regulares ao longo do tempo.</p>
-        </div>
-        
-        <div class="investment-type">
-          <h3>Ações</h3>
-          <p>Investir em ações de empresas pode proporcionar ganhos significativos a longo prazo, embora também apresente maior volatilidade.</p>
-        </div>
-        
-        <div class="investment-type">
-          <h3>Títulos de Renda Fixa</h3>
-          <p>Títulos de renda fixa, como Tesouro Direto, oferecem uma forma mais conservadora de investimento, com retornos previsíveis ao longo do tempo.</p>
-        </div>
-      </div>
-    </div>
+    <h2>Como investir a longo prazo</h2>
+    <p>Para investir a longo prazo, é preciso seguir alguns passos básicos:</p>
+    <ul>
+        <li>Definir os seus objetivos financeiros e o seu perfil de risco</li>
+        <li>Escolher os ativos que se adequam ao seu perfil e aos seus objetivos</li>
+        <li>Montar uma carteira diversificada, com diferentes tipos de investimentos</li>
+        <li>Manter uma disciplina de aportes regulares e reinvestir os lucros</li>
+        <li>Acompanhar o desempenho da sua carteira e fazer ajustes quando necessário</li>
+    </ul>
+    <h2>Quais são os melhores investimentos para o longo prazo</h2>
+    <p>Não existe uma resposta única para essa pergunta, pois os melhores investimentos para o longo prazo dependem de
+        vários fatores, como o cenário econômico, as expectativas do mercado, as taxas de juros, a inflação, a
+        rentabilidade, o risco, a liquidez e a tributação de cada ativo. No entanto, alguns investimentos costumam se
+        destacar por apresentarem um bom potencial de valorização e de geração de renda no longo prazo. Alguns exemplos
+        são:</p>
+    <table>
+        <tr>
+            <th>Investimento</th>
+            <th>Características</th>
+            <th>Riscos</th>
+            <th>Rendimentos</th>
+        </tr>
+        <tr>
+            <td>Ações</td>
+            <td>São partes de empresas negociadas na bolsa de valores. Permitem ao investidor se tornar sócio de
+                empresas e participar dos seus lucros e do seu crescimento.</td>
+            <td>São considerados investimentos de alto risco, pois estão sujeitos às variações do mercado, à gestão das
+                empresas, à concorrência, à regulação, aos ciclos econômicos, entre outros fatores.</td>
+            <td>Os rendimentos das ações podem vir de duas formas: a valorização do preço das ações e o pagamento de
+                dividendos (parte dos lucros distribuídos aos acionistas).</td>
+        </tr>
+        <tr>
+            <td>Fundos imobiliários</td>
+            <td>São fundos que investem em imóveis ou em títulos relacionados ao setor imobiliário, como letras de
+                crédito imobiliário (LCI) e certificados de recebíveis imobiliários (CRI). Permitem ao investidor ter
+                acesso a uma renda proveniente de aluguéis ou de juros, sem ter que comprar ou administrar um imóvel.
+            </td>
+            <td>São considerados investimentos de médio a alto risco, pois estão sujeitos às variações do mercado, à
+                vacância, à inadimplência, à desvalorização dos imóveis, à regulação, entre outros fatores.</td>
+            <td>Os rendimentos dos fundos imobiliários podem vir de duas formas: a valorização das cotas dos fundos e o
+                pagamento de dividendos (parte dos aluguéis ou dos juros distribuídos aos cotistas).</td>
+        </tr>
+        <tr>
+            <td>Tesouro Direto</td>
+            <td>São títulos públicos emitidos pelo governo federal para financiar as suas atividades. Permitem ao
+                investidor emprestar dinheiro ao governo e receber juros em troca. São considerados os investimentos
+                mais seguros do país, pois têm a garantia do Tesouro Nacional.</td>
+            <td>São considerados investimentos de baixo risco, pois têm a garantia do governo. No entanto, podem sofrer
+                variações de preço no mercado secundário, dependendo das expectativas dos investidores e das taxas de
+                juros.</td>
+            <td>Os rendimentos dos títulos do Tesouro Direto dependem do tipo de título escolhido. Existem títulos
+                prefixados (com taxa de juros definida no momento da compra), pós-fixados (com taxa de juros que varia
+                de acordo com a Selic ou com o IPCA) e híbridos (com uma parte prefixada e outra pós-fixada).</td>
+        </tr>
+    </table>
+    <p>Esses são apenas alguns exemplos de investimentos a longo prazo. Existem muitos outros tipos de investimentos
+        disponíveis no mercado, como fundos de ações, fundos multimercado, debêntures, criptomoedas, ouro, entre outros.
+        O importante é que o investidor faça uma boa pesquisa, compare as opções e escolha aquelas que se encaixam
+        melhor nos seus objetivos e no seu perfil de risco.</p>
+    <h3>Objetivos financeiros e perfil de risco</h3> <!-- Adiciona um sub-subtítulo para a primeira subseção -->
+    <p>O primeiro passo para investir a longo prazo é definir os seus objetivos financeiros e o seu perfil de risco. Os
+        seus objetivos financeiros são as metas que você quer alcançar com o seu dinheiro, como comprar um imóvel, fazer
+        uma viagem, se aposentar, etc. O seu perfil de risco é o grau de tolerância que você tem em relação às possíveis
+        perdas que o seu investimento pode sofrer. O seu perfil de risco pode ser conservador, moderado ou arrojado,
+        dependendo de fatores como o seu conhecimento sobre o mercado, o seu horizonte de tempo, a sua renda, o seu
+        patrimônio, etc.</p>
+    <p>Os seus objetivos financeiros e o seu perfil de risco vão ajudar você a escolher os ativos que se adequam ao seu
+        perfil e aos seus objetivos. Por exemplo, se você tem um objetivo de longo prazo, como se aposentar, e um perfil
+        de risco moderado, você pode investir em ações de empresas sólidas e com bons dividendos, que podem valorizar e
+        gerar renda ao longo do tempo. Se você tem um objetivo de curto prazo, como fazer uma viagem, e um perfil de
+        risco conservador, você pode investir em títulos do Tesouro Direto, que têm baixo risco e boa liquidez.</p>
+    <h3>Ativos e carteira diversificada</h3> <!-- Adiciona um sub-subtítulo para a segunda subseção -->
+    <p>O segundo passo para investir a longo prazo é escolher os ativos que se adequam ao seu perfil e aos seus
+        objetivos. Os ativos são os bens ou direitos que você pode investir, como ações, fundos imobiliários, títulos
+        públicos, etc. Cada ativo tem as suas características, como rentabilidade, risco, liquidez e tributação, que
+        devem ser analisadas antes de investir. Você deve escolher os ativos que oferecem um bom equilíbrio entre
+        retorno e risco, de acordo com o seu perfil e os seus objetivos.</p>
+    <p>O terceiro passo para investir a longo prazo é montar uma carteira diversificada, com diferentes tipos de
+        investimentos. A diversificação é uma forma de reduzir o risco da sua carteira, pois você não fica dependente de
+        um único ativo ou de um único setor. Ao diversificar, você pode aproveitar as oportunidades de diferentes
+        mercados e reduzir o impacto de possíveis perdas. Você deve diversificar a sua carteira de acordo com o seu
+        perfil e os seus objetivos, buscando ativos que tenham baixa correlação entre si, ou seja, que não se movimentem
+        na mesma direção e na mesma intensidade.</p>
+    <h3>Aportes regulares e reinvestimento dos lucros</h3> <!-- Adiciona um sub-subtítulo para a terceira subseção -->
+    <p>O quarto passo para investir a longo prazo é manter uma disciplina de aportes regulares e reinvestir os lucros.
+        Os aportes regulares são os depósitos que você faz na sua carteira periodicamente, como mensalmente,
+        trimestralmente, anualmente, etc. Os aportes regulares permitem que você aproveite as oscilações do mercado e
+        compre mais ativos quando eles estão baratos e menos ativos quando eles estão caros. Isso aumenta o seu
+        potencial de retorno no longo prazo. O reinvestimento dos lucros é a prática de usar os rendimentos dos seus
+        investimentos, como dividendos, juros, aluguéis, etc., para comprar mais ativos. O reinvestimento dos lucros
+        permite que você aumente o seu patrimônio e acelere o seu crescimento no longo prazo.</p>
+    <h3>Acompanhamento e ajustes</h3> <!-- Adiciona um sub-subtítulo para a quarta subseção -->
+    <p>O quinto passo para investir a longo prazo é acompanhar o desempenho da sua carteira e fazer ajustes quando
+        necessário. O acompanhamento é a prática de verificar periodicamente como os seus investimentos estão se
+        comportando, se eles estão atingindo os seus objetivos, se eles estão alinhados com o seu perfil de risco, etc.
+        O acompanhamento permite que você identifique possíveis problemas ou oportunidades na sua carteira e tome as
+        decisões adequadas. Os ajustes são as mudanças que você faz na sua carteira, como vender, comprar ou trocar
+        ativos, alterar a proporção entre eles, etc. Os ajustes permitem que você mantenha a sua carteira equilibrada e
+        adequada ao seu perfil e aos seus objetivos.</p>
+    <h2>Conclusão</h2>
+    <p>Investir a longo prazo é uma forma de buscar retornos maiores e mais consistentes ao longo do tempo, sem se
+        preocupar com as oscilações do mercado no curto prazo. Para investir a longo prazo, é preciso definir os seus
+        objetivos financeiros e o seu perfil de risco, escolher os ativos que se adequam ao seu perfil e aos seus
+        objetivos, montar uma carteira diversificada, manter uma disciplina de aportes regulares e reinvestir os lucros,
+        acompanhar o desempenho da sua carteira e fazer ajustes quando necessário. Os melhores investimentos para o
+        longo prazo dependem de vários fatores, como o cenário econômico, as expectativas do mercado, as taxas de juros,
+        a inflação, a rentabilidade, o risco, a liquidez e a tributação de cada ativo. Alguns exemplos de investimentos
+        a longo prazo são ações, fundos imobiliários e Tesouro Direto. No entanto, existem muitos outros tipos de
+        investimentos disponíveis no mercado, que devem ser pesquisados e comparados pelo investidor. Lembre-se de que
+        investir a longo prazo requer paciência, disciplina e planejamento, mas pode trazer muitos benefícios para quem
+        quer construir um patrimônio sólido e garantir uma renda futura.</p>
+        <p>Se você quiser saber mais sobre investimentos a longo prazo,
+          você pode fazer o login na nossa pagina e ter conteudo personalizado com o nosso ChatBoot. Tenha um ótimo dia! 😊</p>
 </body>
 
 </html>

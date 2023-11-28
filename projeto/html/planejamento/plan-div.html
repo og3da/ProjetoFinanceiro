@@ -2,164 +2,240 @@
 <html lang="pt-br">
 
 <head>
-    <title>Como renegociar dividas</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/form.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>Como renegociar dividas</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/form.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 70px;
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #182D4A;
+      margin: 0;
+      color: #FFFFFF;
+    }
+
+    h1 {
+      color: #FFFFFF;
+      background-color: #182D4A;
+      padding: 25px;
+      text-align: center;
+    }
+
+    p {
+      color: #FFFFFF;
+      margin: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    td,
+    th {
+      border: 1px solid #FFFFFF;
+      padding: 10px;
+    }
+
+    p:last-of-type {
+      color: #FFFFFF;
+      background-color: #182D4A;
+      padding: 10px;
+      text-align: center;
+    }
+
+    @keyframes escrevendo {
+      from {
+        width: 0;
+        text-shadow: 2px 2px 2px #888;
       }
-      h1 {
-        text-align: center;
-      }
-      .container {
+
+      to {
         width: 100%;
-        max-width: 100%;
-        background-color: #fff;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
-      p {
-        line-height: 1.6;
-      }
-      .investments-section {
-        margin-top: 20px;
-      }
-      .investment-type {
-        margin-bottom: 20px;
-      }
-      .investment-type h3 {
-        margin-bottom: 10px;
-      }
-    </style>
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"></button>
-                    <a class="navbar-brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                            <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                            <path
-                                d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z" />
-                        </svg> EDUCAÇÃO FINANCEIRA </a>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li><a href="../fatec.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                                    <path
-                                        d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.6 483.2 483.9 512 448.5 512H128.1C92.75 512 64.09 483.3 64.09 448V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5H575.8zM288 160C252.7 160 224 188.7 224 224C224 259.3 252.7 288 288 288C323.3 288 352 259.3 352 224C352 188.7 323.3 160 288 160zM256 320C211.8 320 176 355.8 176 400C176 408.8 183.2 416 192 416H384C392.8 416 400 408.8 400 400C400 355.8 364.2 320 320 320H256z" />
-                                </svg> </a></li>
-                        <li><a href="#services"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                                    <path
-                                        d="M256 48C256 21.49 277.5 0 304 0H592C618.5 0 640 21.49 640 48V464C640 490.5 618.5 512 592 512H381.3C383 506.1 384 501.6 384 496V253.3C402.6 246.7 416 228.9 416 208V176C416 149.5 394.5 128 368 128H256V48zM571.3 347.3C577.6 341.1 577.6 330.9 571.3 324.7L507.3 260.7C501.1 254.4 490.9 254.4 484.7 260.7L420.7 324.7C414.4 330.9 414.4 341.1 420.7 347.3C426.9 353.6 437.1 353.6 443.3 347.3L480 310.6V432C480 440.8 487.2 448 496 448C504.8 448 512 440.8 512 432V310.6L548.7 347.3C554.9 353.6 565.1 353.6 571.3 347.3H571.3zM0 176C0 167.2 7.164 160 16 160H368C376.8 160 384 167.2 384 176V208C384 216.8 376.8 224 368 224H16C7.164 224 0 216.8 0 208V176zM352 480C352 497.7 337.7 512 320 512H64C46.33 512 32 497.7 32 480V256H352V480zM144 320C135.2 320 128 327.2 128 336C128 344.8 135.2 352 144 352H240C248.8 352 256 344.8 256 336C256 327.2 248.8 320 240 320H144z" />
-                                </svg> </a></li>
-                        <li><a href="#about"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                                    <path
-                                        d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 400c-18 0-32-14-32-32s13.1-32 32-32c17.1 0 32 14 32 32S273.1 400 256 400zM325.1 258L280 286V288c0 13-11 24-24 24S232 301 232 288V272c0-8 4-16 12-21l57-34C308 213 312 206 312 198C312 186 301.1 176 289.1 176h-51.1C225.1 176 216 186 216 198c0 13-11 24-24 24s-24-11-24-24C168 159 199 128 237.1 128h51.1C329 128 360 159 360 198C360 222 347 245 325.1 258z" />
-                                </svg> </a></li>
-                        <li><a href="#contact"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                                    <path
-                                        d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z" />
-                                </svg> </a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <!--PLANEJAMENTO FINANCEIRO -->
-                            <a href="#" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                                    <path
-                                        d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.6 483.2 483.9 512 448.5 512H128.1C92.75 512 64.09 483.3 64.09 448V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5H575.8zM288 160C252.7 160 224 188.7 224 224C224 259.3 252.7 288 288 288C323.3 288 352 259.3 352 224C352 188.7 323.3 160 288 160zM256 320C211.8 320 176 355.8 176 400C176 408.8 183.2 416 192 416H384C392.8 416 400 408.8 400 400C400 355.8 364.2 320 320 320H256z" />
-                                </svg> PLANEJAMENTO FINANCEIRO </a>
-                            <div class="dropdown-content">
-                              <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/planejamento/plan-eco.html">Aprenda a economizar</a>
-                            </div>
-                        </li>
-                        <li class="dropdown">
-                            <!--INVESTIMENTOS -->
-                            <a href="#" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                                    <path
-                                        d="M256 48C256 21.49 277.5 0 304 0H592C618.5 0 640 21.49 640 48V464C640 490.5 618.5 512 592 512H381.3C383 506.1 384 501.6 384 496V253.3C402.6 246.7 416 228.9 416 208V176C416 149.5 394.5 128 368 128H256V48zM571.3 347.3C577.6 341.1 577.6 330.9 571.3 324.7L507.3 260.7C501.1 254.4 490.9 254.4 484.7 260.7L420.7 324.7C414.4 330.9 414.4 341.1 420.7 347.3C426.9 353.6 437.1 353.6 443.3 347.3L480 310.6V432C480 440.8 487.2 448 496 448C504.8 448 512 440.8 512 432V310.6L548.7 347.3C554.9 353.6 565.1 353.6 571.3 347.3H571.3zM0 176C0 167.2 7.164 160 16 160H368C376.8 160 384 167.2 384 176V208C384 216.8 376.8 224 368 224H16C7.164 224 0 216.8 0 208V176zM352 480C352 497.7 337.7 512 320 512H64C46.33 512 32 497.7 32 480V256H352V480zM144 320C135.2 320 128 327.2 128 336C128 344.8 135.2 352 144 352H240C248.8 352 256 344.8 256 336C256 327.2 248.8 320 240 320H144z" />
-                                </svg> INVESTIMENTOS</a>
-                            <div class="dropdown-content">
-                                <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/Investimentos/in-curto.html">Curto prazo</a>
-                                <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/Investimentos/in-logo.html">Longo prazo</a>
-                                <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/Investimentos/tesouro-direto.html">Tesouro Direto</a>
-                            </div>
-                        </li>
-                        <li class="dropdown">
-                            <!--FERRAMENTAS -->
-                            <a href="#" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                    <path
-                                        d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 400c-18 0-32-14-32-32s13.1-32 32-32c17.1 0 32 14 32 32S273.1 400 256 400zM325.1 258L280 286V288c0 13-11 24-24 24S232 301 232 288V272c0-8 4-16 12-21l57-34C308 213 312 206 312 198C312 186 301.1 176 289.1 176h-51.1C225.1 176 216 186 216 198c0 13-11 24-24 24s-24-11-24-24C168 159 199 128 237.1 128h51.1C329 128 360 159 360 198C360 222 347 245 325.1 258z" />
-                                </svg> CALCULADORAS </a>
-                            <div class="dropdown-content">
-                                <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-sal-liquido.html">Salário Líquido</a>
-                                <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-imp-renda.html">Imposto de renda</a>
-                                <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-ferias.html">Férias</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <div class="container">
-      <h1>Como renegociar dívidas</h1>
-      
-      <div class="overview">
-        <p>Renegociar dívidas pode ser uma estratégia importante para resolver problemas financeiros. Aqui estão alguns passos a considerar ao tentar renegociar suas dívidas:</p>
-      </div>
-    
-      <div class="steps-section">
-        <div class="step">
-          <h3>Análise Financeira</h3>
-          <p>Avalie sua situação financeira atual, identificando todas as dívidas, valores devidos e suas condições.</p>
+  <div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"></button>
+          <a class="navbar-brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+              <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+              <path
+                d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z" />
+            </svg> EDUCAÇÃO FINANCEIRA </a>
         </div>
-        
-        <div class="step">
-          <h3>Contato com Credores</h3>
-          <p>Entre em contato com os credores para discutir opções de pagamento, seja por telefone, e-mail ou pessoalmente.</p>
-        </div>
-        
-        <div class="step">
-          <h3>Negociação de Condições</h3>
-          <p>Proponha novas condições de pagamento, como parcelamentos, redução de juros ou até mesmo descontos para quitação.</p>
-        </div>
-        
-        <div class="step">
-          <h3>Acordo Formal</h3>
-          <p>Após chegar a um acordo com o credor, obtenha o acordo por escrito para garantir clareza e cumprimento das novas condições.</p>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="../fatec.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.6 483.2 483.9 512 448.5 512H128.1C92.75 512 64.09 483.3 64.09 448V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5H575.8zM288 160C252.7 160 224 188.7 224 224C224 259.3 252.7 288 288 288C323.3 288 352 259.3 352 224C352 188.7 323.3 160 288 160zM256 320C211.8 320 176 355.8 176 400C176 408.8 183.2 416 192 416H384C392.8 416 400 408.8 400 400C400 355.8 364.2 320 320 320H256z" />
+                </svg> </a></li>
+            <li><a href="#services"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M256 48C256 21.49 277.5 0 304 0H592C618.5 0 640 21.49 640 48V464C640 490.5 618.5 512 592 512H381.3C383 506.1 384 501.6 384 496V253.3C402.6 246.7 416 228.9 416 208V176C416 149.5 394.5 128 368 128H256V48zM571.3 347.3C577.6 341.1 577.6 330.9 571.3 324.7L507.3 260.7C501.1 254.4 490.9 254.4 484.7 260.7L420.7 324.7C414.4 330.9 414.4 341.1 420.7 347.3C426.9 353.6 437.1 353.6 443.3 347.3L480 310.6V432C480 440.8 487.2 448 496 448C504.8 448 512 440.8 512 432V310.6L548.7 347.3C554.9 353.6 565.1 353.6 571.3 347.3H571.3zM0 176C0 167.2 7.164 160 16 160H368C376.8 160 384 167.2 384 176V208C384 216.8 376.8 224 368 224H16C7.164 224 0 216.8 0 208V176zM352 480C352 497.7 337.7 512 320 512H64C46.33 512 32 497.7 32 480V256H352V480zM144 320C135.2 320 128 327.2 128 336C128 344.8 135.2 352 144 352H240C248.8 352 256 344.8 256 336C256 327.2 248.8 320 240 320H144z" />
+                </svg> </a></li>
+            <li><a href="#about"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 400c-18 0-32-14-32-32s13.1-32 32-32c17.1 0 32 14 32 32S273.1 400 256 400zM325.1 258L280 286V288c0 13-11 24-24 24S232 301 232 288V272c0-8 4-16 12-21l57-34C308 213 312 206 312 198C312 186 301.1 176 289.1 176h-51.1C225.1 176 216 186 216 198c0 13-11 24-24 24s-24-11-24-24C168 159 199 128 237.1 128h51.1C329 128 360 159 360 198C360 222 347 245 325.1 258z" />
+                </svg> </a></li>
+            <li><a href="#contact"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z" />
+                </svg> </a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <!--PLANEJAMENTO FINANCEIRO -->
+              <a href="#" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.6 483.2 483.9 512 448.5 512H128.1C92.75 512 64.09 483.3 64.09 448V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5H575.8zM288 160C252.7 160 224 188.7 224 224C224 259.3 252.7 288 288 288C323.3 288 352 259.3 352 224C352 188.7 323.3 160 288 160zM256 320C211.8 320 176 355.8 176 400C176 408.8 183.2 416 192 416H384C392.8 416 400 408.8 400 400C400 355.8 364.2 320 320 320H256z" />
+                </svg> PLANEJAMENTO FINANCEIRO </a>
+              <div class="dropdown-content">
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/planejamento/plan-eco.html">Aprenda
+                  a economizar</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <!--INVESTIMENTOS -->
+              <a href="#" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                  <path
+                    d="M256 48C256 21.49 277.5 0 304 0H592C618.5 0 640 21.49 640 48V464C640 490.5 618.5 512 592 512H381.3C383 506.1 384 501.6 384 496V253.3C402.6 246.7 416 228.9 416 208V176C416 149.5 394.5 128 368 128H256V48zM571.3 347.3C577.6 341.1 577.6 330.9 571.3 324.7L507.3 260.7C501.1 254.4 490.9 254.4 484.7 260.7L420.7 324.7C414.4 330.9 414.4 341.1 420.7 347.3C426.9 353.6 437.1 353.6 443.3 347.3L480 310.6V432C480 440.8 487.2 448 496 448C504.8 448 512 440.8 512 432V310.6L548.7 347.3C554.9 353.6 565.1 353.6 571.3 347.3H571.3zM0 176C0 167.2 7.164 160 16 160H368C376.8 160 384 167.2 384 176V208C384 216.8 376.8 224 368 224H16C7.164 224 0 216.8 0 208V176zM352 480C352 497.7 337.7 512 320 512H64C46.33 512 32 497.7 32 480V256H352V480zM144 320C135.2 320 128 327.2 128 336C128 344.8 135.2 352 144 352H240C248.8 352 256 344.8 256 336C256 327.2 248.8 320 240 320H144z" />
+                </svg> INVESTIMENTOS</a>
+              <div class="dropdown-content">
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/Investimentos/in-curto.html">Curto
+                  prazo</a>
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/Investimentos/in-logo.html">Longo
+                  prazo</a>
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/Investimentos/tesouro-direto.html">Tesouro
+                  Direto</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <!--FERRAMENTAS -->
+              <a href="#" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path
+                    d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 400c-18 0-32-14-32-32s13.1-32 32-32c17.1 0 32 14 32 32S273.1 400 256 400zM325.1 258L280 286V288c0 13-11 24-24 24S232 301 232 288V272c0-8 4-16 12-21l57-34C308 213 312 206 312 198C312 186 301.1 176 289.1 176h-51.1C225.1 176 216 186 216 198c0 13-11 24-24 24s-24-11-24-24C168 159 199 128 237.1 128h51.1C329 128 360 159 360 198C360 222 347 245 325.1 258z" />
+                </svg> CALCULADORAS </a>
+              <div class="dropdown-content">
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-sal-liquido.html">Salário
+                  Líquido</a>
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-imp-renda.html">Imposto
+                  de renda</a>
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-ferias.html">Férias</a>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
+    </nav>
+  </div>
+  <h1 style="font-family: 'Arial Black', sans-serif; font-size: 3em; color: #fdfdfd; text-transform: uppercase; text-align: center; animation: escrevendo 4s steps(40) forwards;"> Como renegociar dividas</h1>
+    <div style="text-align: center;">
+      <img src="C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/img/div.png" alt="Minha Imagem" style="display: inline-block;">
+  </div>
+  <h2>Renegociar as dívidas é uma forma de sair do vermelho e recuperar o seu crédito.</h2>
+    <p>Aqui estão alguns passos e dicas que podem te ajudar:</p>
+  <ul>
+    <li><strong>Faça um levantamento de suas dívidas</strong>: Anote todas as suas dívidas, os valores, os juros, as
+      multas, os prazos e os credores. Assim, você terá uma visão geral da sua situação financeira e poderá planejar a
+      sua renegociação.</li>
+      <br>
+      <br>
+    <li><strong>Encontre a melhor forma de negociar</strong>: Existem diferentes formas de negociar as suas dívidas,
+      dependendo do tipo, do valor e do credor. Você pode entrar em contato direto com o credor, usar plataformas
+      online, participar de feirões de renegociação, ou aderir a programas do governo, como o Desenrola Brasil. Escolha
+      a forma que mais se adapta ao seu caso e que oferece as melhores condições.</li>
+      <br>
+      <br>
+    <li><strong>Saiba qual o Custo Efetivo Total</strong>: O Custo Efetivo Total (CET) é o valor total que você vai
+      pagar pela dívida, incluindo juros, taxas, impostos e outros encargos. É importante saber o CET para comparar as
+      propostas de renegociação e escolher a mais vantajosa. Você pode usar simuladores online para calcular o CET, como
+      o do Banco Central.</li>
+      <br>
+      <br>
+    <li><strong>Priorize as dívidas com as maiores taxas de juros</strong>: As dívidas com as maiores taxas de juros são
+      as que mais pesam no seu bolso e que mais crescem com o tempo. Por isso, é recomendável que você priorize a
+      renegociação dessas dívidas, como as de cartão de crédito, cheque especial, empréstimo pessoal, entre outras.
+      Assim, você evita o efeito bola de neve e economiza dinheiro.</li>
+      <br>
+      <br>
+    <li><strong>Defina uma meta de poupança mensal</strong>: Para renegociar as suas dívidas, você precisa ter uma
+      reserva de dinheiro para pagar as parcelas ou os valores à vista. Por isso, é importante que você defina uma meta
+      de poupança mensal, que seja compatível com a sua renda e com o seu orçamento. Você pode usar aplicativos ou
+      planilhas para controlar as suas receitas e despesas, e cortar os gastos desnecessários.</li>
+      <br>
+      <br>
+    <li><strong>Negocie com os credores</strong>: Depois de escolher a forma de negociação e ter uma reserva de
+      dinheiro, você pode entrar em contato com os seus credores e fazer uma proposta de renegociação. Seja honesto,
+      educado e firme. Explique a sua situação, mostre a sua intenção de pagar, e peça descontos, redução de juros,
+      aumento de prazo, ou outras facilidades. Não aceite uma proposta que você não possa cumprir, e exija um contrato
+      por escrito.</li>
+      <br>
+      <br>
+    <li><strong>Troque dívidas caras por mais baratas</strong>: Uma alternativa para renegociar as suas dívidas é trocar
+      as dívidas caras por mais baratas. Isso significa pegar um empréstimo com juros menores para quitar as dívidas com
+      juros maiores. Por exemplo, você pode usar o crédito consignado, o refinanciamento de imóvel ou de veículo, ou o
+      empréstimo com garantia, para pagar o cartão de crédito ou o cheque especial. Mas cuidado para não se endividar
+      ainda mais, e compare o CET das opções.</li>
+      <br>
+      <br>
+    <li><strong>Monte um planejamento</strong>: Depois de renegociar as suas dívidas, você precisa montar um
+      planejamento para pagar as parcelas em dia e evitar novas dívidas. Estabeleça metas, prazos e prioridades. Reserve
+      uma parte da sua renda para a quitação das dívidas, e outra para a formação de uma reserva de emergência. Tenha
+      disciplina, controle e organização. Use ferramentas que te ajudem a acompanhar o seu progresso, como o SPC
+      Consumidor.</li>
+      <br>
     
-      <div class="tips">
-        <h2>Dicas para Renegociar Dívidas</h2>
-        <ul>
-          <li>Seja honesto sobre sua situação financeira ao negociar.</li>
-          <li>Tente negociar dentro de suas possibilidades, oferecendo propostas realistas de pagamento.</li>
-          <li>Busque a ajuda de profissionais financeiros ou de órgãos de defesa do consumidor, se necessário.</li>
-          <li>Esteja preparado para ouvir as contrapropostas dos credores e buscar um acordo que beneficie ambas as partes.</li>
-        </ul>
-      </div>
-    </div>
-    
+  </ul>
+  <p>Agora que você já sabe alguns passos e dicas de como renegociar as dívidas, vamos ver quais são as vantagens e desvantagens de renegociar as dívidas. Renegociar as dívidas pode trazer muitos benefícios, mas também pode ter alguns custos. Veja a seguir:</p>
+  <table>
+      <tr>
+          <th>Vantagens</th>
+          <th>Desvantagens</th>
+      </tr>
+      <tr>
+          <td>Você pode recuperar o seu crédito e limpar o seu nome, podendo ter acesso a melhores condições de financiamento, empréstimo, cartão de crédito, entre outros.</td>
+          <td>Você pode ter que pagar taxas, multas ou juros adicionais pela renegociação, dependendo do tipo de dívida e do credor.</td>
+      </tr>
+      <tr>
+          <td>Você pode obter uma redução na quantidade de dívida que deverá pagar, já que a taxa de juros cobrada pelas instituições financeiras pode estar abusiva.</td>
+          <td>Você pode ter que comprometer uma parte da sua renda por um período mais longo, se optar por parcelar a dívida renegociada.</td>
+      </tr>
+      <tr>
+          <td>Você pode ter mais tranquilidade e organização financeira, evitando o estresse e o descontrole que as dívidas causam.</td>
+          <td>Você pode ter que abrir mão de alguns gastos ou investimentos que deseja fazer, para priorizar o pagamento da dívida renegociada.</td>
+      </tr>
+      <tr>
+          <td>Você pode melhorar a sua educação financeira, aprendendo a evitar novas dívidas e a planejar melhor o seu orçamento.</td>
+          <td>Você pode ter dificuldade em negociar com os credores, se eles não forem flexíveis ou se não oferecerem boas condições.</td>
+      </tr>
+  </table>
+  <p>Se você quiser saber mais sobre como renegociar suas dividas,
+    você pode fazer o login na nossa pagina e ter conteudo personalizado com o nosso ChatBoot. Tenha um ótimo dia! 😊</p>
+
 </body>
 
 </html>

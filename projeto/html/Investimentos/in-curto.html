@@ -2,159 +2,265 @@
 <html lang="pt-br">
 
 <head>
-    <title>Invertimento a curto prazo</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/form.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>Invertimento a curto prazo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/form.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 70px;
+  <style>
+     body {
+            font-family: Arial, sans-serif;
+            background-color: #182D4A;
+            margin: 0;
+            color: #FFFFFF;
+        }
+
+        h1 {
+            color: #FFFFFF;
+            background-color: #182D4A;
+            padding: 25px;
+            text-align: center;
+        }
+
+        p {
+            color: #FFFFFF;
+            margin: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        td,
+        th {
+            border: 1px solid #FFFFFF;
+            padding: 10px;
+        }
+
+        p:last-of-type {
+            color: #FFFFFF;
+            background-color: #182D4A;
+            padding: 10px;
+            text-align: center;
+        }
+        @keyframes escrevendo {
+      from {
+        width: 0;
+        text-shadow: 2px 2px 2px #888;
       }
-      h1 {
-        text-align: center;
-      }
-      .container {
+      to {
         width: 100%;
-        max-width: 100%;
-        background-color: #fff;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
-      p {
-        line-height: 1.6;
-      }
-      .investments-section {
-        margin-top: 20px;
-      }
-      .investment-type {
-        margin-bottom: 20px;
-      }
-      .investment-type h3 {
-        margin-bottom: 10px;
-      }
-    </style>
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"></button>
-                    <a class="navbar-brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                            <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                            <path
-                                d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z" />
-                        </svg> EDUCAÇÃO FINANCEIRA </a>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li><a href="../fatec.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                                    <path
-                                        d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.6 483.2 483.9 512 448.5 512H128.1C92.75 512 64.09 483.3 64.09 448V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5H575.8zM288 160C252.7 160 224 188.7 224 224C224 259.3 252.7 288 288 288C323.3 288 352 259.3 352 224C352 188.7 323.3 160 288 160zM256 320C211.8 320 176 355.8 176 400C176 408.8 183.2 416 192 416H384C392.8 416 400 408.8 400 400C400 355.8 364.2 320 320 320H256z" />
-                                </svg> </a></li>
-                        <li><a href="#services"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                                    <path
-                                        d="M256 48C256 21.49 277.5 0 304 0H592C618.5 0 640 21.49 640 48V464C640 490.5 618.5 512 592 512H381.3C383 506.1 384 501.6 384 496V253.3C402.6 246.7 416 228.9 416 208V176C416 149.5 394.5 128 368 128H256V48zM571.3 347.3C577.6 341.1 577.6 330.9 571.3 324.7L507.3 260.7C501.1 254.4 490.9 254.4 484.7 260.7L420.7 324.7C414.4 330.9 414.4 341.1 420.7 347.3C426.9 353.6 437.1 353.6 443.3 347.3L480 310.6V432C480 440.8 487.2 448 496 448C504.8 448 512 440.8 512 432V310.6L548.7 347.3C554.9 353.6 565.1 353.6 571.3 347.3H571.3zM0 176C0 167.2 7.164 160 16 160H368C376.8 160 384 167.2 384 176V208C384 216.8 376.8 224 368 224H16C7.164 224 0 216.8 0 208V176zM352 480C352 497.7 337.7 512 320 512H64C46.33 512 32 497.7 32 480V256H352V480zM144 320C135.2 320 128 327.2 128 336C128 344.8 135.2 352 144 352H240C248.8 352 256 344.8 256 336C256 327.2 248.8 320 240 320H144z" />
-                                </svg> </a></li>
-                        <li><a href="#about"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                                    <path
-                                        d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 400c-18 0-32-14-32-32s13.1-32 32-32c17.1 0 32 14 32 32S273.1 400 256 400zM325.1 258L280 286V288c0 13-11 24-24 24S232 301 232 288V272c0-8 4-16 12-21l57-34C308 213 312 206 312 198C312 186 301.1 176 289.1 176h-51.1C225.1 176 216 186 216 198c0 13-11 24-24 24s-24-11-24-24C168 159 199 128 237.1 128h51.1C329 128 360 159 360 198C360 222 347 245 325.1 258z" />
-                                </svg> </a></li>
-                        <li><a href="#contact"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                                    <path
-                                        d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z" />
-                                </svg> </a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <!--PLANEJAMENTO FINANCEIRO -->
-                            <a href="#" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                                    <path
-                                        d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.6 483.2 483.9 512 448.5 512H128.1C92.75 512 64.09 483.3 64.09 448V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5H575.8zM288 160C252.7 160 224 188.7 224 224C224 259.3 252.7 288 288 288C323.3 288 352 259.3 352 224C352 188.7 323.3 160 288 160zM256 320C211.8 320 176 355.8 176 400C176 408.8 183.2 416 192 416H384C392.8 416 400 408.8 400 400C400 355.8 364.2 320 320 320H256z" />
-                                </svg> PLANEJAMENTO FINANCEIRO </a>
-                            <div class="dropdown-content">
-                              <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/planejamento/plan-eco.html">Aprenda a economizar</a>
-                              <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/planejamento/plan-div.html">Como renegociar dividas</a>
-                            </div>
-                        </li>
-                        <li class="dropdown">
-                            <!--INVESTIMENTOS -->
-                            <a href="#" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                                    <path
-                                        d="M256 48C256 21.49 277.5 0 304 0H592C618.5 0 640 21.49 640 48V464C640 490.5 618.5 512 592 512H381.3C383 506.1 384 501.6 384 496V253.3C402.6 246.7 416 228.9 416 208V176C416 149.5 394.5 128 368 128H256V48zM571.3 347.3C577.6 341.1 577.6 330.9 571.3 324.7L507.3 260.7C501.1 254.4 490.9 254.4 484.7 260.7L420.7 324.7C414.4 330.9 414.4 341.1 420.7 347.3C426.9 353.6 437.1 353.6 443.3 347.3L480 310.6V432C480 440.8 487.2 448 496 448C504.8 448 512 440.8 512 432V310.6L548.7 347.3C554.9 353.6 565.1 353.6 571.3 347.3H571.3zM0 176C0 167.2 7.164 160 16 160H368C376.8 160 384 167.2 384 176V208C384 216.8 376.8 224 368 224H16C7.164 224 0 216.8 0 208V176zM352 480C352 497.7 337.7 512 320 512H64C46.33 512 32 497.7 32 480V256H352V480zM144 320C135.2 320 128 327.2 128 336C128 344.8 135.2 352 144 352H240C248.8 352 256 344.8 256 336C256 327.2 248.8 320 240 320H144z" />
-                                </svg> INVESTIMENTOS</a>
-                            <div class="dropdown-content">
-                              <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/Investimentos/in-logo.html">Longo prazo</a>
-                              <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/Investimentos/tesouro-direto.html">Tesouro Direto</a>
-                            </div>
-                        </li>
-                        <li class="dropdown">
-                            <!--FERRAMENTAS -->
-                            <a href="#" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                    <path
-                                        d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 400c-18 0-32-14-32-32s13.1-32 32-32c17.1 0 32 14 32 32S273.1 400 256 400zM325.1 258L280 286V288c0 13-11 24-24 24S232 301 232 288V272c0-8 4-16 12-21l57-34C308 213 312 206 312 198C312 186 301.1 176 289.1 176h-51.1C225.1 176 216 186 216 198c0 13-11 24-24 24s-24-11-24-24C168 159 199 128 237.1 128h51.1C329 128 360 159 360 198C360 222 347 245 325.1 258z" />
-                                </svg> CALCULADORAS </a>
-                            <div class="dropdown-content">
-                                <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-sal-liquido.html">Salário Líquido</a>
-                                <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-imp-renda.html">Imposto de renda</a>
-                                <a href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-ferias.html">Férias</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <div class="container">
-      <h1>Investimentos a Curto Prazo</h1>
-      
-      <div class="overview">
-        <h2>Descrição</h2>
-        <p>Investimentos a curto prazo referem-se a estratégias financeiras em que os investidores procuram obter retornos em um período mais breve, geralmente de alguns meses a até dois anos. Geralmente são considerados menos arriscados do que investimentos de longo prazo e podem incluir estratégias como fundos de renda fixa, certificados de depósito e fundos do mercado monetário.</p>
-        
-        <h2>Vantagens</h2>
-        <ul>
-          <li>Menor exposição a volatilidades de mercado de longo prazo.</li>
-          <li>Preservação de capital em um período mais curto.</li>
-          <li>Acesso a opções de investimento com menor risco.</li>
-          <li>Possibilidade de liquidez mais rápida.</li>
-        </ul>
-      </div>
-    
-      <div class="investments-section">
-        <h2>Tipos Comuns de Investimentos a Curto Prazo</h2>
-        
-        <div class="investment-type">
-          <h3>Fundos do Mercado Monetário</h3>
-          <p>Fundos do mercado monetário investem em títulos de curto prazo, como títulos do governo e certificados de depósito, oferecendo liquidez e segurança.</p>
+  <div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"></button>
+          <a class="navbar-brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+              <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+              <path
+                d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z" />
+            </svg> EDUCAÇÃO FINANCEIRA </a>
         </div>
-        
-        <div class="investment-type">
-          <h3>Certificados de Depósito (CDs)</h3>
-          <p>CDs são instrumentos de depósito oferecidos por bancos com taxas de juros fixas por um período determinado, geralmente de alguns meses a alguns anos.</p>
-        </div>
-        
-        <div class="investment-type">
-          <h3>Fundos de Renda Fixa de Curto Prazo</h3>
-          <p>Fundos de renda fixa de curto prazo investem em títulos de dívida com vencimento em até dois anos, proporcionando retornos estáveis.</p>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="../fatec.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.6 483.2 483.9 512 448.5 512H128.1C92.75 512 64.09 483.3 64.09 448V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5H575.8zM288 160C252.7 160 224 188.7 224 224C224 259.3 252.7 288 288 288C323.3 288 352 259.3 352 224C352 188.7 323.3 160 288 160zM256 320C211.8 320 176 355.8 176 400C176 408.8 183.2 416 192 416H384C392.8 416 400 408.8 400 400C400 355.8 364.2 320 320 320H256z" />
+                </svg> </a></li>
+            <li><a href="#services"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M256 48C256 21.49 277.5 0 304 0H592C618.5 0 640 21.49 640 48V464C640 490.5 618.5 512 592 512H381.3C383 506.1 384 501.6 384 496V253.3C402.6 246.7 416 228.9 416 208V176C416 149.5 394.5 128 368 128H256V48zM571.3 347.3C577.6 341.1 577.6 330.9 571.3 324.7L507.3 260.7C501.1 254.4 490.9 254.4 484.7 260.7L420.7 324.7C414.4 330.9 414.4 341.1 420.7 347.3C426.9 353.6 437.1 353.6 443.3 347.3L480 310.6V432C480 440.8 487.2 448 496 448C504.8 448 512 440.8 512 432V310.6L548.7 347.3C554.9 353.6 565.1 353.6 571.3 347.3H571.3zM0 176C0 167.2 7.164 160 16 160H368C376.8 160 384 167.2 384 176V208C384 216.8 376.8 224 368 224H16C7.164 224 0 216.8 0 208V176zM352 480C352 497.7 337.7 512 320 512H64C46.33 512 32 497.7 32 480V256H352V480zM144 320C135.2 320 128 327.2 128 336C128 344.8 135.2 352 144 352H240C248.8 352 256 344.8 256 336C256 327.2 248.8 320 240 320H144z" />
+                </svg> </a></li>
+            <li><a href="#about"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 400c-18 0-32-14-32-32s13.1-32 32-32c17.1 0 32 14 32 32S273.1 400 256 400zM325.1 258L280 286V288c0 13-11 24-24 24S232 301 232 288V272c0-8 4-16 12-21l57-34C308 213 312 206 312 198C312 186 301.1 176 289.1 176h-51.1C225.1 176 216 186 216 198c0 13-11 24-24 24s-24-11-24-24C168 159 199 128 237.1 128h51.1C329 128 360 159 360 198C360 222 347 245 325.1 258z" />
+                </svg> </a></li>
+            <li><a href="#contact"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z" />
+                </svg> </a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <!--PLANEJAMENTO FINANCEIRO -->
+              <a href="#" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.6 483.2 483.9 512 448.5 512H128.1C92.75 512 64.09 483.3 64.09 448V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5H575.8zM288 160C252.7 160 224 188.7 224 224C224 259.3 252.7 288 288 288C323.3 288 352 259.3 352 224C352 188.7 323.3 160 288 160zM256 320C211.8 320 176 355.8 176 400C176 408.8 183.2 416 192 416H384C392.8 416 400 408.8 400 400C400 355.8 364.2 320 320 320H256z" />
+                </svg> PLANEJAMENTO FINANCEIRO </a>
+              <div class="dropdown-content">
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/planejamento/plan-eco.html">Aprenda
+                  a economizar</a>
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/planejamento/plan-div.html">Como
+                  renegociar dividas</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <!--INVESTIMENTOS -->
+              <a href="#" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                  <path
+                    d="M256 48C256 21.49 277.5 0 304 0H592C618.5 0 640 21.49 640 48V464C640 490.5 618.5 512 592 512H381.3C383 506.1 384 501.6 384 496V253.3C402.6 246.7 416 228.9 416 208V176C416 149.5 394.5 128 368 128H256V48zM571.3 347.3C577.6 341.1 577.6 330.9 571.3 324.7L507.3 260.7C501.1 254.4 490.9 254.4 484.7 260.7L420.7 324.7C414.4 330.9 414.4 341.1 420.7 347.3C426.9 353.6 437.1 353.6 443.3 347.3L480 310.6V432C480 440.8 487.2 448 496 448C504.8 448 512 440.8 512 432V310.6L548.7 347.3C554.9 353.6 565.1 353.6 571.3 347.3H571.3zM0 176C0 167.2 7.164 160 16 160H368C376.8 160 384 167.2 384 176V208C384 216.8 376.8 224 368 224H16C7.164 224 0 216.8 0 208V176zM352 480C352 497.7 337.7 512 320 512H64C46.33 512 32 497.7 32 480V256H352V480zM144 320C135.2 320 128 327.2 128 336C128 344.8 135.2 352 144 352H240C248.8 352 256 344.8 256 336C256 327.2 248.8 320 240 320H144z" />
+                </svg> INVESTIMENTOS</a>
+              <div class="dropdown-content">
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/Investimentos/in-logo.html">Longo
+                  prazo</a>
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/Investimentos/tesouro-direto.html">Tesouro
+                  Direto</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <!--FERRAMENTAS -->
+              <a href="#" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path
+                    d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 400c-18 0-32-14-32-32s13.1-32 32-32c17.1 0 32 14 32 32S273.1 400 256 400zM325.1 258L280 286V288c0 13-11 24-24 24S232 301 232 288V272c0-8 4-16 12-21l57-34C308 213 312 206 312 198C312 186 301.1 176 289.1 176h-51.1C225.1 176 216 186 216 198c0 13-11 24-24 24s-24-11-24-24C168 159 199 128 237.1 128h51.1C329 128 360 159 360 198C360 222 347 245 325.1 258z" />
+                </svg> CALCULADORAS </a>
+              <div class="dropdown-content">
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-sal-liquido.html">Salário
+                  Líquido</a>
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-imp-renda.html">Imposto
+                  de renda</a>
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-ferias.html">Férias</a>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
+    </nav>
+  </div>
+  <h1 style="font-family: 'Arial Black', sans-serif; font-size: 3em; color: #fdfdfd; text-transform: uppercase; text-align: center; animation: escrevendo 4s steps(40) forwards;">Investimentos a curto prazo</h1>
+  <p>Investir a curto prazo significa aplicar o seu dinheiro por um período de tempo inferior a um ano, com o objetivo
+    de obter uma rentabilidade superior à da poupança ou de outros investimentos de baixo risco. Existem diversas opções
+    de investimentos a curto prazo, como o Tesouro Selic, o CDB, o LCI, o LCA e os fundos de renda fixa.</p>
+  <div style="text-align: center;">
+    <img src="C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/img/int-curto.png" alt="Minha Imagem" style="display: inline-block;">
+</div>
+ 
+  <p>Antes de escolher o melhor investimento a curto prazo para você, é importante considerar alguns fatores, como o seu
+    perfil de investidor, o seu objetivo financeiro, o prazo de resgate, a liquidez, a rentabilidade e o risco do
+    investimento. Além disso, é essencial diversificar a sua carteira, investindo em diferentes tipos de ativos, para
+    reduzir os riscos e aumentar as chances de sucesso.</p>
+  <p>Uma das vantagens de investir a curto prazo é que você pode aproveitar as oportunidades do mercado, como as
+    oscilações das taxas de juros, da inflação e do câmbio. Além disso, você pode ter uma maior flexibilidade para
+    resgatar o seu dinheiro quando precisar, sem comprometer os seus planos de longo prazo. Por outro lado, investir a
+    curto prazo também tem algumas desvantagens, como a menor rentabilidade, a maior incidência de impostos e a maior
+    volatilidade dos investimentos.</p>
+  <p>Para investir a curto prazo, você precisa ter uma boa educação financeira, acompanhar o cenário econômico e
+    político, analisar as características e os riscos de cada investimento e comparar as diferentes opções disponíveis
+    no mercado. Você também pode contar com a ajuda de um consultor financeiro ou de uma plataforma de investimentos
+    online, que podem oferecer orientação e recomendações personalizadas para o seu caso.</p>
+  <h2>O que são investimentos a curto prazo?</h2>
+  <p>Investimentos a curto prazo são aqueles que têm um prazo de resgate inferior a um ano. Eles podem ser divididos em
+    duas categorias: renda fixa e renda variável. A renda fixa é composta por títulos que pagam uma remuneração definida
+    no momento da aplicação ou que seguem um índice de referência, como o CDI ou a Selic. A renda variável é composta
+    por ativos que têm o seu valor determinado pelo mercado, como as ações ou as opções.</p>
+  <p>Os investimentos a curto prazo na renda fixa costumam ter baixo risco e baixa rentabilidade, enquanto os
+    investimentos a curto prazo na renda variável costumam ter alto risco e alta rentabilidade. Por isso, é importante
+    conhecer o seu perfil de investidor e o seu objetivo financeiro antes de escolher o tipo de investimento mais
+    adequado para você.</p>
+  <h2>Para quem esse tipo de investimento é indicado?</h2>
+  <p>Os investimentos a curto prazo são indicados para quem tem um objetivo financeiro definido e que precisa resgatar o
+    dinheiro em um período de tempo menor do que um ano. Por exemplo, quem está planejando uma viagem, um curso, uma
+    reforma ou uma compra de um bem. Nesses casos, os investimentos a curto prazo podem oferecer uma rentabilidade
+    superior à da poupança ou de outros investimentos de baixo risco, sem comprometer a liquidez e a segurança do
+    capital.</p>
+  <p>Os investimentos a curto prazo também são indicados para quem quer aproveitar as oportunidades do mercado, como as
+    variações das taxas de juros, da inflação e do câmbio. Nesses casos, os investimentos a curto prazo na renda
+    variável podem oferecer uma rentabilidade superior à da renda fixa, mas com um maior risco e uma maior volatilidade.
+    Por isso, é preciso ter uma boa educação financeira, acompanhar o cenário econômico e político, e ter uma estratégia
+    bem definida.</p>
+  <h2>Quais são as vantagens e desvantagens desse investimento?</h2>
+  <p>Os investimentos a curto prazo têm vantagens e desvantagens que devem ser consideradas antes de aplicar o seu
+    dinheiro. Veja a seguir alguns pontos positivos e negativos desse tipo de investimento:</p>
+  <ul>
+    <li>Vantagens:
+      <ul>
+        <li>Liquidez: você pode resgatar o seu dinheiro a qualquer momento, sem comprometer os seus planos de longo
+          prazo.</li>
+        <li>Oportunidade: você pode aproveitar as oscilações do mercado, como as variações das taxas de juros, da
+          inflação e do câmbio.</li>
+        <li>Diversificação: você pode investir em diferentes tipos de ativos, reduzindo os riscos e aumentando as
+          chances de sucesso.</li>
+      </ul>
+    </li>
+    <li>Desvantagens:
+      <ul>
+        <li>Rentabilidade: você pode ter uma rentabilidade menor do que a de outros investimentos de médio e longo
+          prazo.</li>
+        <li>Impostos: você pode ter uma maior incidência de impostos, como o IOF e o IR, que podem reduzir a sua
+          rentabilidade líquida.</li>
+        <li>Volatilidade: você pode ter uma maior volatilidade dos investimentos, especialmente na renda variável, o que
+          pode gerar perdas ou ganhos inesperados.</li>
+      </ul>
+    </li>
+  </ul>
+  <h2>Quais os exemplos de investimentos a curto prazo?</h2>
+  <p>Existem muitos tipos diferentes de investimento a curto prazo. Normalmente, essas aplicações contam com algumas
+    características específicas, como baixa volatilidade, liquidez diária, rentabilidade menor e valor inicial baixo
+    para o investimento. Veja a seguir alguns exemplos de investimentos a curto prazo na renda fixa e na renda variável:
+  </p>
+  <div class="box">
+   
+    <table>
+      <tr>
+        <th>Investimento</th>
+        <th>Características</th>
+        <th>Riscos</th>
+        <th>Rendimentos</th>
+      </tr>
+      <tr>
+        <td>Tesouro Selic</td>
+        <td>Título público pós-fixado que acompanha a taxa Selic. Tem liquidez diária e baixo custo.</td>
+        <td>Baixo. Garantido pelo Tesouro Nacional. Sofre IOF e IR.</td>
+        <td>7,25% ao ano (taxa Selic atual).</td>
+      </tr>
+      <tr>
+        <td>CDB</td>
+        <td>Título privado emitido por bancos. Pode ser prefixado, pós-fixado ou híbrido. Tem liquidez diária ou no
+          vencimento. Garantido pelo FGC.</td>
+        <td>Médio. Depende da solvência do banco emissor. Sofre IR.</td>
+        <td>Varia de acordo com o tipo de contrato. Em média, 100% do CDI.</td>
+      </tr>
+      <tr>
+        <td>LCI e LCA</td>
+        <td>Títulos privados emitidos por bancos. Pode ser prefixado, pós-fixado ou híbrido. Tem prazo de carência.
+          Garantido pelo FGC. Isento de IR.</td>
+        <td>Médio. Depende da solvência do banco emissor.</td>
+        <td>Varia de acordo com o tipo de contrato. Em média, 90% do CDI.</td>
+      </tr>
+      <tr>
+        <td>Fundos de renda fixa</td>
+        <td>Carteira de títulos de renda fixa gerida por um profissional. Pode ter diferentes estratégias e níveis de
+          risco. Tem liquidez diária. Sofre taxa de administração e come-cotas.</td>
+        <td>Alto. Depende da composição da carteira e da gestão do fundo.</td>
+        <td>Varia de acordo com o desempenho do fundo. Em média, 80% do CDI.</td>
+      </tr>
+    </table>
+  </div>
+  <p>Se você quiser saber mais sobre investimentos a curto prazo,
+    você pode fazer o login na nossa pagina e ter conteudo personalizado com o nosso ChatBoot. Tenha um ótimo dia! 😊</p>
 </body>
 
 </html>

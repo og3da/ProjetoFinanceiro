@@ -1,263 +1,246 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <title>Aprenda a Economizar</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="../../css/style-plan-eco.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 70px;
+<head>
+  <title>Aprenda a Economizar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/form.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            background-color: #182D4A;
+            margin: 0;
+            color: #FFFFFF;
+        }
+
+        h1 {
+            color: #FFFFFF;
+            background-color: #182D4A;
+            padding: 25px;
+            text-align: center;
+        }
+
+        p {
+            color: #FFFFFF;
+            margin: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        td,
+        th {
+            border: 1px solid #FFFFFF;
+            padding: 10px;
+        }
+
+        p:last-of-type {
+            color: #FFFFFF;
+            background-color: #182D4A;
+            padding: 10px;
+            text-align: center;
+        }
+        @keyframes escrevendo {
+      from {
+        width: 0;
+        text-shadow: 2px 2px 2px #888;
       }
-      h1 {
-        text-align: center;
-      }
-      .container {
+      to {
         width: 100%;
-        max-width: 100%;
-        background-color: #fff;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
-      p {
-        line-height: 1.6;
-      }
-      .investments-section {
-        margin-top: 20px;
-      }
-      .investment-type {
-        margin-bottom: 20px;
-      }
-      .investment-type h3 {
-        margin-bottom: 10px;
-      }
-    </style>
-  </head>
+    }
+  </style>
+</head>
 
-  <body>
-    <div class="container-fluid">
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button
-              type="button"
-              class="navbar-toggle"
-              data-toggle="collapse"
-              data-target="#myNavbar"
-            ></button>
-            <a class="navbar-brand" href="#"
-              ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                <path
-                  d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"
-                />
-              </svg>
-              EDUCAÇÃO FINANCEIRA
-            </a>
-          </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-left">
-              <li>
-                <a href="../fatec.html"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 576 512"
-                  >
-                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                    <path
-                      d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.6 483.2 483.9 512 448.5 512H128.1C92.75 512 64.09 483.3 64.09 448V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5H575.8zM288 160C252.7 160 224 188.7 224 224C224 259.3 252.7 288 288 288C323.3 288 352 259.3 352 224C352 188.7 323.3 160 288 160zM256 320C211.8 320 176 355.8 176 400C176 408.8 183.2 416 192 416H384C392.8 416 400 408.8 400 400C400 355.8 364.2 320 320 320H256z"
-                    />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#services"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 640 512"
-                  >
-                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                    <path
-                      d="M256 48C256 21.49 277.5 0 304 0H592C618.5 0 640 21.49 640 48V464C640 490.5 618.5 512 592 512H381.3C383 506.1 384 501.6 384 496V253.3C402.6 246.7 416 228.9 416 208V176C416 149.5 394.5 128 368 128H256V48zM571.3 347.3C577.6 341.1 577.6 330.9 571.3 324.7L507.3 260.7C501.1 254.4 490.9 254.4 484.7 260.7L420.7 324.7C414.4 330.9 414.4 341.1 420.7 347.3C426.9 353.6 437.1 353.6 443.3 347.3L480 310.6V432C480 440.8 487.2 448 496 448C504.8 448 512 440.8 512 432V310.6L548.7 347.3C554.9 353.6 565.1 353.6 571.3 347.3H571.3zM0 176C0 167.2 7.164 160 16 160H368C376.8 160 384 167.2 384 176V208C384 216.8 376.8 224 368 224H16C7.164 224 0 216.8 0 208V176zM352 480C352 497.7 337.7 512 320 512H64C46.33 512 32 497.7 32 480V256H352V480zM144 320C135.2 320 128 327.2 128 336C128 344.8 135.2 352 144 352H240C248.8 352 256 344.8 256 336C256 327.2 248.8 320 240 320H144z"
-                    />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#about"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
-                  >
-                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                    <path
-                      d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 400c-18 0-32-14-32-32s13.1-32 32-32c17.1 0 32 14 32 32S273.1 400 256 400zM325.1 258L280 286V288c0 13-11 24-24 24S232 301 232 288V272c0-8 4-16 12-21l57-34C308 213 312 206 312 198C312 186 301.1 176 289.1 176h-51.1C225.1 176 216 186 216 198c0 13-11 24-24 24s-24-11-24-24C168 159 199 128 237.1 128h51.1C329 128 360 159 360 198C360 222 347 245 325.1 258z"
-                    />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#contact"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
-                  >
-                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                    <path
-                      d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z"
-                    />
-                  </svg>
-                </a>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li class="dropdown">
-                <!--PLANEJAMENTO FINANCEIRO -->
-                <a href="#" class="dropbtn"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 576 512"
-                  >
-                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                    <path
-                      d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.6 483.2 483.9 512 448.5 512H128.1C92.75 512 64.09 483.3 64.09 448V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5H575.8zM288 160C252.7 160 224 188.7 224 224C224 259.3 252.7 288 288 288C323.3 288 352 259.3 352 224C352 188.7 323.3 160 288 160zM256 320C211.8 320 176 355.8 176 400C176 408.8 183.2 416 192 416H384C392.8 416 400 408.8 400 400C400 355.8 364.2 320 320 320H256z"
-                    />
-                  </svg>
-                  PLANEJAMENTO FINANCEIRO
-                </a>
-                <div class="dropdown-content">
-                  <a
-                    href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/planejamento/plan-div.html"
-                    >Como renegociar dividas</a
-                  >
-                </div>
-              </li>
-              <li class="dropdown">
-                <!--INVESTIMENTOS -->
-                <a href="#" class="dropbtn"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 640 512"
-                  >
-                    <path
-                      d="M256 48C256 21.49 277.5 0 304 0H592C618.5 0 640 21.49 640 48V464C640 490.5 618.5 512 592 512H381.3C383 506.1 384 501.6 384 496V253.3C402.6 246.7 416 228.9 416 208V176C416 149.5 394.5 128 368 128H256V48zM571.3 347.3C577.6 341.1 577.6 330.9 571.3 324.7L507.3 260.7C501.1 254.4 490.9 254.4 484.7 260.7L420.7 324.7C414.4 330.9 414.4 341.1 420.7 347.3C426.9 353.6 437.1 353.6 443.3 347.3L480 310.6V432C480 440.8 487.2 448 496 448C504.8 448 512 440.8 512 432V310.6L548.7 347.3C554.9 353.6 565.1 353.6 571.3 347.3H571.3zM0 176C0 167.2 7.164 160 16 160H368C376.8 160 384 167.2 384 176V208C384 216.8 376.8 224 368 224H16C7.164 224 0 216.8 0 208V176zM352 480C352 497.7 337.7 512 320 512H64C46.33 512 32 497.7 32 480V256H352V480zM144 320C135.2 320 128 327.2 128 336C128 344.8 135.2 352 144 352H240C248.8 352 256 344.8 256 336C256 327.2 248.8 320 240 320H144z"
-                    />
-                  </svg>
-                  INVESTIMENTOS</a
-                >
-                <div class="dropdown-content">
-                  <a
-                    href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/Investimentos/in-curto.html"
-                    >Curto prazo</a
-                  >
-                  <a
-                    href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/Investimentos/in-logo.html"
-                    >Longo prazo</a
-                  >
-                  <a
-                    href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/Investimentos/tesouro-direto.html"
-                    >Tesouro Direto</a
-                  >
-                </div>
-              </li>
-              <li class="dropdown">
-                <!--FERRAMENTAS -->
-                <a href="#" class="dropbtn"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
-                  >
-                    <path
-                      d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 400c-18 0-32-14-32-32s13.1-32 32-32c17.1 0 32 14 32 32S273.1 400 256 400zM325.1 258L280 286V288c0 13-11 24-24 24S232 301 232 288V272c0-8 4-16 12-21l57-34C308 213 312 206 312 198C312 186 301.1 176 289.1 176h-51.1C225.1 176 216 186 216 198c0 13-11 24-24 24s-24-11-24-24C168 159 199 128 237.1 128h51.1C329 128 360 159 360 198C360 222 347 245 325.1 258z"
-                    />
-                  </svg>
-                  CALCULADORAS
-                </a>
-                <div class="dropdown-content">
-                  <a
-                    href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-sal-liquido.html"
-                    >Salário Líquido</a
-                  >
-                  <a
-                    href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-imp-renda.html"
-                    >Imposto de renda</a
-                  >
-                  <a
-                    href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-ferias.html"
-                    >Férias</a
-                  >
-                </div>
-              </li>
-            </ul>
-          </div>
+<body>
+  <div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"></button>
+          <a class="navbar-brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+              <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+              <path
+                d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z" />
+            </svg> EDUCAÇÃO FINANCEIRA </a>
         </div>
-      </nav>
-    </div>
-    <div class="container">
-      <h1>Dicas para Economizar Dinheiro</h1>
-
-      <div class="overview">
-        <p>
-          Economizar dinheiro pode ser uma prática essencial para alcançar metas
-          financeiras e ter mais segurança financeira. Aqui estão algumas dicas
-          para ajudar a economizar em diferentes aspectos da vida cotidiana:
-        </p>
-      </div>
-
-      <div class="tips-section">
-        <div class="tip">
-          <h3>Controle de Gastos</h3>
-          <p>
-            Mantenha um registro de gastos para entender para onde seu dinheiro
-            está indo. Use aplicativos de controle financeiro para ajudar na
-            gestão.
-          </p>
-        </div>
-
-        <div class="tip">
-          <h3>Orçamento Mensal</h3>
-          <p>
-            Crie um orçamento mensal detalhado, priorizando despesas essenciais
-            e estabelecendo limites para gastos não essenciais.
-          </p>
-        </div>
-
-        <div class="tip">
-          <h3>Compras Inteligentes</h3>
-          <p>
-            Compare preços antes de fazer compras e aproveite descontos, cupons
-            e promoções para economizar em itens necessários.
-          </p>
-        </div>
-
-        <div class="tip">
-          <h3>Redução de Despesas Fixas</h3>
-          <p>
-            Considere renegociar contratos de serviços, como internet, TV a cabo
-            e telefone, buscando pacotes mais econômicos.
-          </p>
-        </div>
-
-        <div class="tip">
-          <h3>Economia de Energia</h3>
-          <p>
-            Adote práticas para economizar energia, como desligar aparelhos
-            eletrônicos, usar lâmpadas econômicas e controlar o uso do ar
-            condicionado.
-          </p>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="../fatec.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.6 483.2 483.9 512 448.5 512H128.1C92.75 512 64.09 483.3 64.09 448V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5H575.8zM288 160C252.7 160 224 188.7 224 224C224 259.3 252.7 288 288 288C323.3 288 352 259.3 352 224C352 188.7 323.3 160 288 160zM256 320C211.8 320 176 355.8 176 400C176 408.8 183.2 416 192 416H384C392.8 416 400 408.8 400 400C400 355.8 364.2 320 320 320H256z" />
+                </svg> </a></li>
+            <li><a href="#services"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M256 48C256 21.49 277.5 0 304 0H592C618.5 0 640 21.49 640 48V464C640 490.5 618.5 512 592 512H381.3C383 506.1 384 501.6 384 496V253.3C402.6 246.7 416 228.9 416 208V176C416 149.5 394.5 128 368 128H256V48zM571.3 347.3C577.6 341.1 577.6 330.9 571.3 324.7L507.3 260.7C501.1 254.4 490.9 254.4 484.7 260.7L420.7 324.7C414.4 330.9 414.4 341.1 420.7 347.3C426.9 353.6 437.1 353.6 443.3 347.3L480 310.6V432C480 440.8 487.2 448 496 448C504.8 448 512 440.8 512 432V310.6L548.7 347.3C554.9 353.6 565.1 353.6 571.3 347.3H571.3zM0 176C0 167.2 7.164 160 16 160H368C376.8 160 384 167.2 384 176V208C384 216.8 376.8 224 368 224H16C7.164 224 0 216.8 0 208V176zM352 480C352 497.7 337.7 512 320 512H64C46.33 512 32 497.7 32 480V256H352V480zM144 320C135.2 320 128 327.2 128 336C128 344.8 135.2 352 144 352H240C248.8 352 256 344.8 256 336C256 327.2 248.8 320 240 320H144z" />
+                </svg> </a></li>
+            <li><a href="#about"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 400c-18 0-32-14-32-32s13.1-32 32-32c17.1 0 32 14 32 32S273.1 400 256 400zM325.1 258L280 286V288c0 13-11 24-24 24S232 301 232 288V272c0-8 4-16 12-21l57-34C308 213 312 206 312 198C312 186 301.1 176 289.1 176h-51.1C225.1 176 216 186 216 198c0 13-11 24-24 24s-24-11-24-24C168 159 199 128 237.1 128h51.1C329 128 360 159 360 198C360 222 347 245 325.1 258z" />
+                </svg> </a></li>
+            <li><a href="#contact"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z" />
+                </svg> </a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <!--PLANEJAMENTO FINANCEIRO -->
+              <a href="#" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.6 483.2 483.9 512 448.5 512H128.1C92.75 512 64.09 483.3 64.09 448V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5H575.8zM288 160C252.7 160 224 188.7 224 224C224 259.3 252.7 288 288 288C323.3 288 352 259.3 352 224C352 188.7 323.3 160 288 160zM256 320C211.8 320 176 355.8 176 400C176 408.8 183.2 416 192 416H384C392.8 416 400 408.8 400 400C400 355.8 364.2 320 320 320H256z" />
+                </svg> PLANEJAMENTO FINANCEIRO </a>
+              <div class="dropdown-content">
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/planejamento/plan-div.html">Como
+                  renegociar dividas</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <!--INVESTIMENTOS -->
+              <a href="#" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                  <path
+                    d="M256 48C256 21.49 277.5 0 304 0H592C618.5 0 640 21.49 640 48V464C640 490.5 618.5 512 592 512H381.3C383 506.1 384 501.6 384 496V253.3C402.6 246.7 416 228.9 416 208V176C416 149.5 394.5 128 368 128H256V48zM571.3 347.3C577.6 341.1 577.6 330.9 571.3 324.7L507.3 260.7C501.1 254.4 490.9 254.4 484.7 260.7L420.7 324.7C414.4 330.9 414.4 341.1 420.7 347.3C426.9 353.6 437.1 353.6 443.3 347.3L480 310.6V432C480 440.8 487.2 448 496 448C504.8 448 512 440.8 512 432V310.6L548.7 347.3C554.9 353.6 565.1 353.6 571.3 347.3H571.3zM0 176C0 167.2 7.164 160 16 160H368C376.8 160 384 167.2 384 176V208C384 216.8 376.8 224 368 224H16C7.164 224 0 216.8 0 208V176zM352 480C352 497.7 337.7 512 320 512H64C46.33 512 32 497.7 32 480V256H352V480zM144 320C135.2 320 128 327.2 128 336C128 344.8 135.2 352 144 352H240C248.8 352 256 344.8 256 336C256 327.2 248.8 320 240 320H144z" />
+                </svg> INVESTIMENTOS</a>
+              <div class="dropdown-content">
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/Investimentos/in-curto.html">Curto
+                  prazo</a>
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/Investimentos/in-logo.html">Longo
+                  prazo</a>
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/Investimentos/tesouro-direto.html">Tesouro
+                  Direto</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <!--FERRAMENTAS -->
+              <a href="#" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path
+                    d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 400c-18 0-32-14-32-32s13.1-32 32-32c17.1 0 32 14 32 32S273.1 400 256 400zM325.1 258L280 286V288c0 13-11 24-24 24S232 301 232 288V272c0-8 4-16 12-21l57-34C308 213 312 206 312 198C312 186 301.1 176 289.1 176h-51.1C225.1 176 216 186 216 198c0 13-11 24-24 24s-24-11-24-24C168 159 199 128 237.1 128h51.1C329 128 360 159 360 198C360 222 347 245 325.1 258z" />
+                </svg> CALCULADORAS </a>
+              <div class="dropdown-content">
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-sal-liquido.html">Salário
+                  Líquido</a>
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-imp-renda.html">Imposto
+                  de renda</a>
+                <a
+                  href="file:///C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/html/ferramentas/calc-ferias.html">Férias</a>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-  </body>
+    </nav>
+  </div>
+  <h1 style="font-family: 'Arial Black', sans-serif; font-size: 3em; color: #fdfdfd; text-transform: uppercase; text-align: center; animation: escrevendo 4s steps(40) forwards;">Aprenda a economizar</h1>
+  <div style="text-align: center;">
+    <img src="C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/img/eco.png" alt="Minha Imagem" style="display: inline-block;">
+</div>
+  <p>Economizar dinheiro é uma habilidade que pode trazer muitos benefícios para a sua vida financeira e pessoal. Você
+    pode economizar para realizar seus sonhos, investir no seu futuro, ter uma reserva de emergência, ou simplesmente
+    ter mais tranquilidade. Mas como economizar de forma eficiente e consistente? Aqui estão alguns tópicos e dicas que
+    podem te ajudar:</p>
+  <table>
+    <tr>
+      <th>Tópico</th>
+      <th>Dica</th>
+    </tr>
+    <tr>
+      <td>Planeje seu orçamento</td>
+      <td>Anote todas as suas receitas e despesas mensais, e veja quanto você pode poupar por mês. Estabeleça uma meta
+        de economia e se comprometa a cumpri-la.</td>
+    </tr>
+    <tr>
+      <td>Controle seus gastos</td>
+      <td>Evite gastar mais do que você ganha, e procure reduzir ou eliminar os gastos desnecessários. Use aplicativos
+        ou planilhas para acompanhar seus gastos e identificar onde você pode economizar.</td>
+    </tr>
+    <tr>
+      <td>Pague suas dívidas</td>
+      <td>Se você tem dívidas, procure quitá-las o quanto antes, pois elas podem comprometer a sua capacidade de
+        economizar. Negocie com os credores, renegocie os juros, e priorize as dívidas mais caras.</td>
+    </tr>
+    <tr>
+      <td>Invista seu dinheiro</td>
+      <td>Não deixe o seu dinheiro parado na conta corrente ou na poupança, pois ele pode perder valor com a inflação.
+        Busque opções de investimento que se adequem ao seu perfil e aos seus objetivos, e faça o seu dinheiro render
+        mais.</td>
+    </tr>
+    <tr>
+      <td>Consuma de forma consciente</td>
+      <td>Antes de comprar algo, pergunte-se se você realmente precisa, se pode pagar, e se vale a pena. Compare preços,
+        pesquise sobre a qualidade, e aproveite as promoções. Evite compras por impulso ou por emoção.</td>
+    </tr>
+    <tr>
+      <td>Economize no transporte</td>
+      <td>Escolha o meio de transporte mais adequado para cada ocasião, considerando o custo, o tempo e o conforto. Se
+        possível, use transporte público, bicicleta ou caminhada. Se tiver carro, faça manutenções periódicas, planeje
+        seus trajetos e compartilhe as viagens com outras pessoas. Se usar aplicativos de transporte, evite horários de
+        pico e use cupons de desconto.</td>
+    </tr>
+  </table>
+  <p>Agora que você já sabe algumas dicas de como economizar, vamos ver quais são as vantagens e desvantagens de
+    economizar. Economizar pode trazer muitos benefícios, mas também pode ter alguns custos. Veja a seguir:</p>
+  <table>
+    <tr>
+      <th>Vantagens</th>
+      <th>Desvantagens</th>
+    </tr>
+    <tr>
+      <td>Você pode realizar seus sonhos, como viajar, comprar um carro, uma casa, ou fazer um curso.</td>
+      <td>Você pode ter que abrir mão de alguns prazeres imediatos, como sair, comer fora, ou comprar coisas que você
+        gosta.</td>
+    </tr>
+    <tr>
+      <td>Você pode investir no seu futuro, como aposentadoria, educação, ou negócio próprio.</td>
+      <td>Você pode correr o risco de perder dinheiro com investimentos mal feitos, ou com a inflação e a taxa de juros.
+      </td>
+    </tr>
+    <tr>
+      <td>Você pode ter uma reserva de emergência, para lidar com imprevistos, como doenças, acidentes, ou desemprego.
+      </td>
+      <td>Você pode ficar obcecado com a economia, e se privar de coisas que são importantes para a sua saúde,
+        bem-estar, ou relacionamentos.</td>
+    </tr>
+    <tr>
+      <td>Você pode ter mais tranquilidade, sabendo que tem dinheiro suficiente para as suas necessidades e desejos.
+      </td>
+      <td>Você pode perder oportunidades de aproveitar a vida, como conhecer novos lugares, pessoas, ou experiências.
+      </td>
+    </tr>
+  </table>
+  <h2>Como economizar no supermercado ?</h2>
+  <p>Defina uma meta de orçamento: antes de ir ao supermercado, estabeleça quanto você pode gastar e se comprometa a não ultrapassar esse valor. Isso vai te ajudar a controlar seus impulsos e a priorizar o que é essencial.</p>
+  <p>Planeje as compras: faça uma lista dos produtos que você precisa comprar e siga-a à risca. Evite comprar itens que não estão na lista, a não ser que sejam realmente necessários. Além disso, planeje um cardápio semanal com as refeições que você vai preparar, assim você evita desperdício e compra apenas os ingredientes que vai usar.</p>
+  <p>Escolha ao menos três supermercados para a pesquisa de preço: compare os preços dos produtos que você precisa em diferentes estabelecimentos e escolha o que oferece o melhor custo-benefício. Você pode usar ferramentas online para fazer essa pesquisa, como o guia de supermercado da Proteste1.</p>
+  <p>Não vá de estômago vazio: quando você faz compras com fome, você tende a comprar mais do que precisa e a se deixar levar por produtos que não são saudáveis nem econômicos. Por isso, alimente-se bem antes de ir ao supermercado e evite cair em tentações.</p>
+  <p>Fique atento aos “truques” dos estabelecimentos: os supermercados usam várias estratégias para induzir o consumidor a gastar mais, como colocar os produtos mais caros na altura dos olhos, oferecer degustações, tocar músicas relaxantes, entre outras. Não se deixe enganar por esses truques e foque na sua lista de compras.</p>
+  <p>Cuidado com as práticas abusivas: alguns supermercados podem tentar vender produtos vencidos, danificados ou com preços diferentes do anunciado. Fique atento à validade, à qualidade e ao valor dos produtos que você compra e exija seus direitos de consumidor se perceber alguma irregularidade.</p>
+  <p>Não tenha hora certa e nem tempo máximo para as compras: se você for ao supermercado em horários de pico, como no fim do dia ou no fim de semana, você pode enfrentar filas, estresse e pressa, o que pode prejudicar suas escolhas. Prefira ir em horários mais tranquilos, como pela manhã ou no meio da semana, e reserve um tempo suficiente para fazer as compras com calma e atenção.</p>
+  <p>Aproveite o dia de promoções: muitos supermercados têm dias especiais de desconto em determinados produtos, como hortifrúti, carnes, laticínios, etc. Se você puder, aproveite essas promoções para comprar os produtos que você precisa com preços mais baixos. Mas cuidado para não comprar mais do que o necessário só porque está em promoção.</p>
+  <p>Evite compras mensais ou muito grandes: quando você faz compras muito grandes ou mensais, você corre o risco de comprar produtos que não vai usar, que podem estragar ou que podem ficar esquecidos no fundo do armário. Além disso, você pode perder o controle do seu orçamento e gastar mais do que deveria. O ideal é fazer compras semanais ou quinzenais, comprando apenas o que você vai consumir nesse período.</p>
+  <p>Troque as marcas mais caras pelas mais baratas: muitas vezes, os produtos de marcas mais conhecidas ou mais anunciadas são mais caros do que os de marcas menos famosas ou genéricas, mas não necessariamente têm mais qualidade ou sabor. Experimente trocar as marcas mais caras pelas mais baratas e veja se você nota alguma diferença. Você pode se surpreender e economizar bastante.</p>
+  <p>Se você quiser saber mais sobre como economizar seu dinheiro,
+    você pode fazer o login na nossa pagina e ter conteudo personalizado com o nosso ChatBoot. Tenha um ótimo dia! 😊</p>
+
+</body>
+
 </html>

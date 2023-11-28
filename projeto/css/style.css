@@ -37,7 +37,7 @@ body {
 }
 
 nav ul li a:hover {
-  background-color: #27a52f;
+  background-color: #182D4A;
 }
 
 ul li {
@@ -68,7 +68,7 @@ ul li {
 
 /* seção inicial conf */
 .inicial {
-  background-color: #27a52f; 
+  background-color:#182D4A; 
   color: whitesmoke;
   padding: 70px 25px;
   height: 100vh;
@@ -113,7 +113,7 @@ ul li {
   overflow: hidden;
   width: 341px;
   height: 375px;
-  background-color: #27a52f;
+  background-color: #182D4A;
   color: whitesmoke;
 }
 
@@ -150,14 +150,16 @@ ul li {
 /* seção sobre conf */
 #about {
   padding: 50px;
-  background-color: #27a52f;
+  background-color: #182D4A;
   height: 70vh; 
+  color: #fff
 }
 
 #about-text {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fff;
 }
 
 #about-text p {
@@ -290,3 +292,12 @@ svg {
   }
 }
 /* animação SlideAnim */
+@keyframes escrevendo {
+  from {
+    width: 0;
+    text-shadow: 2px 2px 2px #888;
+  }
+  to {
+    width: 100%;
+  }
+}

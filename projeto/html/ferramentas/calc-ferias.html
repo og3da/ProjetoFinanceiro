@@ -7,37 +7,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/form.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <style>
-        .calculator {
-          background-color: #fff;
-          border-radius: 8px;
-          padding: 60px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+             body {
+            font-family: Arial, sans-serif;
+            background-color: #182D4A;
+            margin: 0;
+            color: #FFFFFF
         }
-        label {
-          display: block;
-          margin-bottom: 8px;
+
+        h1 {
+            color: #FFFFFF;
+            background-color: #182D4A;
+            padding: 25px;
+            text-align: center;
         }
+
+        p {
+            color: #FFFFFF;
+            margin: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333
+        }
+
         input {
-          width: 100%;
-          padding: 8px;
-          margin-bottom: 16px;
-          box-sizing: border-box;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #FFFFFF;
+            width: 300px;
         }
+
         button {
-          background-color: #4caf50;
-          color: #fff;
-          padding: 10px 20px;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #FFFFFF;
+            background-color: #182D4A;
+            color: #FFFFFF;
+            width: 100px;
+            transition: 0.3s;
         }
-        button:hover {
-          background-color: #45a049;
+
+        .button:hover {
+            background-color: #00FFFF;
+        }
+
+        .button:active {
+            background-color: #0000FF;
+        }
+
+        p:last-of-type {
+            color: #FFFFFF;
+            background-color: #182D4A;
+            padding: 10px;
+            text-align: center;
+        }
+        .display-box {
+            background-color: #CCCCCC;
+            color: #fafafa;
+            text-align: right;
+        }
+        @keyframes escrevendo {
+            from {
+                width: 0;
+                text-shadow: 2px 2px 2px #888;
+            }
+
+            to {
+                width: 100%;
+            }
         }
       </style>
 </head>
@@ -118,44 +162,69 @@
             </div>
         </nav>
     </div>
+    <h1 style="font-family: 'Arial Black', sans-serif; font-size: 3em; color: #fdfdfd; text-transform: uppercase; text-align: center; animation: escrevendo 4s steps(40) forwards;">Calculadora de ferias</h1>
+    <p>Esta calculadora permite estimar o valor das férias proporcionais que você tem direito, de acordo com a Consolidação das Leis do Trabalho (CLT). Ela leva em conta o seu salário bruto e os meses trabalhados no ano. O cálculo é feito com base no valor das férias integrais, que corresponde ao salário bruto mais um terço, dividido por 12 e multiplicado pelos meses trabalhados.</p>
+    <br>
+    <h2>Para usar a calculadora, siga os seguintes passos:</h2>
+    <br>
+    <ol>
+        <li>Digite o valor do seu salário bruto (antes de descontos) no campo "Salário bruto (R$)".</li>
+        <br>
+        <li>Digite o número de meses que você trabalhou no ano no campo "Meses trabalhados".</li>
+        <br>
+        <li>Clique no botão "Calcular" para obter o valor das férias proporcionais.</li>
+        <br>
+        <li>O resultado será mostrado na caixa abaixo do botão, com o formato "Férias proporcionais: R$ X,XX".</li>
+        <br>
+    </ol>
+    <br>
+    <br>
+    <br>
+    <br>
     <div class="calculator">
-      <h2>Calculadora de Férias</h2>
-      <label for="salario">Salário Mensal (R$):</label>
-      <input type="number" id="salario" placeholder="Informe seu salário mensal">
-    
-      <label for="diasFerias">Número de Dias de Férias:</label>
-      <input type="number" id="diasFerias" placeholder="Informe o número de dias de férias">
-    
-      <button onclick="calcularValorFerias()">Calcular Valor das Férias</button>
-      <h3>Resultado:</h3>
-      <div id="resultado"></div>
-    </div>
-    
-    <script>
-      function calcularValorFerias() {
-        const salarioMensal = parseFloat(document.getElementById('salario').value);
-        const diasFerias = parseFloat(document.getElementById('diasFerias').value);
-    
-        if (isNaN(salarioMensal) || isNaN(diasFerias)) {
-          alert('Por favor, insira valores válidos.');
-          return;
+      <form id="form">
+          <input type="number" id="salario" placeholder="Salário bruto (R$)" min="0" step="0.01" required>
+          <input type="number" id="meses" placeholder="Meses trabalhados" min="0" max="12" step="1" required>
+          <button type="submit" class="button">Calcular</button>
+      </form>
+      <p id="resultado" class="display-box"></p>
+  </div>
+  <script>
+    // Função para calcular o valor das férias proporcionais
+    // Recebe como parâmetros o salário bruto e os meses trabalhados
+    function calcularFeriasProporcionais(salario, meses) {
+        // Valor das férias integrais: salário bruto mais um terço
+        var feriasIntegrais = salario + salario / 3;
+        // Valor das férias proporcionais: valor das férias integrais dividido por 12 e multiplicado pelos meses trabalhados
+        var feriasProporcionais = feriasIntegrais / 12 * meses;
+        // Retorna o valor das férias proporcionais
+        return feriasProporcionais;
+    }
+
+    // Seleciona o formulário e o elemento que mostra o resultado
+    var form = document.getElementById("form");
+    var resultado = document.getElementById("resultado");
+
+    // Adiciona um evento de submit ao formulário
+    form.addEventListener("submit", function(event) {
+        // Previne o comportamento padrão do formulário (recarregar a página)
+        event.preventDefault();
+        // Obtém os valores dos inputs
+        var salario = parseFloat(document.getElementById("salario").value);
+        var meses = parseInt(document.getElementById("meses").value);
+        // Verifica se os valores são válidos
+        if (isNaN(salario) || isNaN(meses)) {
+            // Mostra uma mensagem de erro
+            resultado.textContent = "Por favor, insira valores válidos.";
+        } else {
+            // Calcula o valor das férias proporcionais usando os valores como parâmetros
+            var ferias = calcularFeriasProporcionais(salario, meses);
+            // Mostra o resultado formatado com duas casas decimais
+            alert("Férias proporcionais: R$ " + ferias.toFixed(2));
+            location.reload();
         }
-    
-        const valorFerias = calcularValorFeriasMensal(salarioMensal, diasFerias);
-        exibirResultado(valorFerias);
-      }
-    
-      function calcularValorFeriasMensal(salarioMensal, diasFerias) {
-        const valorDiario = salarioMensal / 30; // Considerando mês de 30 dias
-        const valorFerias = valorDiario * diasFerias;
-        return valorFerias;
-      }
-    
-      function exibirResultado(valorFerias) {
-        const resultadoElement = document.getElementById('resultado');
-        resultadoElement.innerHTML = `<p>Valor das Férias: R$ ${valorFerias.toFixed(2)}</p>`;
-      }
-    </script>
+    });
+</script>
 </body>
 
 </html>
