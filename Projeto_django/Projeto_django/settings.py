@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'login',
     'calculadoras',
     'investimentos',
+    'planFinanceiro'
 ]
 
 MIDDLEWARE = [
