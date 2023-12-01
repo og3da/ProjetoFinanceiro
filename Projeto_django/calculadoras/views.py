@@ -5,3 +5,7 @@ from django.template import loader
 def calc_sal_liq(request):
     template = loader.get_template('calc-sal-liquido.html')
     return HttpResponse(template.render())
+
+def calc_imp_renda(request):
+    template = loader.get_template('calc-imp-renda.html')
+    return HttpResponse(template.render())

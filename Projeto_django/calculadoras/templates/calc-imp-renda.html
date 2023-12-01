@@ -1,7 +1,7 @@
-{% extends "master.html" %}
+{% extends 'master.html' %}
 
 {% block title %}
-  SALÁRIO LÍQUIDO
+  IMPOSTO DE RENDA
 {% endblock %}
 
 {% block content %}
@@ -48,83 +48,93 @@
         </div>
      </nav>
     </div>
-    <h1
-      style="
-        font-family: 'Arial Black', sans-serif;
-        font-size: 3em;
-        color: #fdfdfd;
-        text-transform: uppercase;
-        text-align: center;
-        animation: escrevendo 4s steps(40) forwards;
-      "
-    >
-      Calculadora de saldo líquido
-    </h1>
-    <p>
-      Esta calculadora permite que você calcule o seu saldo líquido, ou seja, a
-      diferença entre a sua receita e a sua despesa, já descontando o imposto. O
-      saldo líquido é um indicador da sua saúde financeira, pois mostra quanto
-      você realmente ganha ou perde no final do mês.
-    </p>
+    <h1 style="font-family: 'Arial Black', sans-serif; font-size: 3em; color: #fdfdfd; text-transform: uppercase; text-align: center; animation: escrevendo 4s steps(40) forwards;">Calculadora de imposto de renda</h1>
+    <p>Esta calculadora permite estimar o valor do imposto de renda que você deve pagar mensalmente, de acordo com a tabela progressiva do IRPF. Ela leva em conta o seu salário bruto e o número de dependentes que você tem. O cálculo é feito com base nas alíquotas e nas parcelas a deduzir do imposto, conforme a faixa de renda em que você se enquadra.</p>
     <br />
     <h2>Para usar a calculadora, siga os seguintes passos:</h2>
     <br />
     <ol>
-      <li>
-        Digite a sua receita mensal no campo "Digite a sua receita mensal". A
-        receita é o valor total que você recebe por mês, incluindo salário,
-        rendimentos, aluguéis, pensões, etc.
-      </li>
+      <li>Digite o valor do seu salário bruto (antes de descontos) no campo "Salário bruto (R$)".</li>
       <br />
-      <li>
-        Digite a sua despesa mensal no campo "Digite a sua despesa mensal". A
-        despesa é o valor total que você gasta por mês, incluindo aluguel, água,
-        luz, telefone, internet, alimentação, transporte, lazer, etc.
-      </li>
+      <li>Digite o número de dependentes que você tem no campo "Número de dependentes".</li>
       <br />
-      <li>
-        Digite o valor do imposto pago no campo "Digite o valor do imposto
-        pago". O imposto é o valor que você paga ao governo por mês, incluindo
-        imposto de renda, INSS, IPTU, IPVA, etc.
-      </li>
+      <li>Clique no botão "Calcular" para obter o valor do imposto de renda.</li>
       <br />
-      <li>
-        Clique no botão "Calcular". A calculadora vai mostrar o seu saldo
-        líquido em uma janela de alerta.
-      </li>
+      <li>O resultado será mostrado na caixa abaixo do botão, com o formato "Imposto de renda: R$ X,XX".</li>
       <br />
     </ol>
     <br />
     <br />
     <br />
     <br />
-    <form>
-      <input
-        type="number"
-        id="receita"
-        placeholder="Digite a sua receita mensal"
-      />
-      <input
-        type="number"
-        id="despesa"
-        placeholder="Digite a sua despesa mensal"
-      />
-      <input
-        type="number"
-        id="imposto"
-        placeholder="Digite o valor do imposto pago"
-      />
-      <button onclick="calcular()">Calcular</button>
-    </form>
+    <div class="calculator">
+      <form id="form">
+        <input type="number" id="salario" placeholder="Salário bruto (R$)" min="0" step="0.01" required />
+        <input type="number" id="dependentes" placeholder="Número de dependentes" min="0" step="1" required />
+        <button type="submit" class="button">Calcular</button>
+      </form>
+      <p id="resultado" class="display-box"></p>
+    </div>
     <script>
-      function calcular() {
-        var receita = parseFloat(document.getElementById("receita").value);
-        var despesa = parseFloat(document.getElementById("despesa").value);
-        var imposto = parseFloat(document.getElementById("imposto").value);
-        var saldo = receita - despesa - imposto;
-        alert("O seu saldo líquido é: R$ " + saldo.toFixed(2));
+      function calcularIRPF(salario, dependentes) {
+        // Dedução por dependente: R$ 189,59
+        var deducao = dependentes * 189.59
+        // Base de cálculo: salário bruto menos a dedução
+        var base = salario - deducao
+        // Alíquota e parcela a deduzir do imposto
+        var aliquota, parcela
+        if (base <= 1903.98) {
+          // Isento
+          aliquota = 0
+          parcela = 0
+        } else if (base <= 2826.65) {
+          // 7,5%
+          aliquota = 0.075
+          parcela = 142.8
+        } else if (base <= 3751.05) {
+          // 15%
+          aliquota = 0.15
+          parcela = 354.8
+        } else if (base <= 4664.68) {
+          // 22,5%
+          aliquota = 0.225
+          parcela = 636.13
+        } else {
+          // 27,5%
+          aliquota = 0.275
+          parcela = 869.36
+        }
+        // Imposto de renda: base de cálculo vezes a alíquota menos a parcela a deduzir
+        var imposto = base * aliquota - parcela
+        // Retorna o valor do imposto
+        return imposto
       }
+      
+      // Seleciona o formulário e o elemento que mostra o resultado
+      var form = document.getElementById('form')
+      var resultado = document.getElementById('resultado')
+      
+      // Adiciona um evento de submit ao formulário
+      form.addEventListener('submit', function (event) {
+        // Previne o comportamento padrão do formulário (recarregar a página)
+        event.preventDefault()
+        // Obtém os valores dos inputs
+        var salario = parseFloat(document.getElementById('salario').value)
+        var dependentes = parseInt(document.getElementById('dependentes').value)
+        // Verifica se os valores são válidos
+        if (isNaN(salario) || isNaN(dependentes)) {
+          // Mostra uma mensagem de erro
+          resultado.textContent = 'Por favor, insira valores válidos.'
+        } else {
+          // Calcula o imposto de renda usando os valores como parâmetros
+          var imposto = calcularIRPF(salario, dependentes)
+          // Calcula o saldo líquido: salário bruto menos o imposto de renda
+          var saldo = salario - imposto
+          // Mostra o resultado em um alerta com o formato "O seu imposto de renda é: R$ X,XX"
+          alert('O seu imposto de renda é: R$ ' + imposto.toFixed(2))
+          location.reload()
+        }
+      })
     </script>
   </body>
-</html>
 {% endblock %}
