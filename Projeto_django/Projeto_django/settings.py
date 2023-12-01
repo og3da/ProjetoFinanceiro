@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'main',
     'login',
     'calculadoras',
+    'investimentos',
 ]
 
 MIDDLEWARE = [
