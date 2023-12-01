@@ -9,3 +9,7 @@ def calc_sal_liq(request):
 def calc_imp_renda(request):
     template = loader.get_template('calc-imp-renda.html')
     return HttpResponse(template.render())
+
+def calc_ferias(request):
+    template = loader.get_template('calc-ferias.html')
+    return HttpResponse(template.render())

@@ -1,0 +1,71 @@
+{% extends "master.html" %}
+
+{% block title %}
+  CALCULADORA FÉRIAS
+{% endblock %}
+
+{% block content %}
+    <h1 style="font-family: 'Arial Black', sans-serif; font-size: 3em; color: #fdfdfd; text-transform: uppercase; text-align: center; animation: escrevendo 4s steps(40) forwards;">Calculadora de ferias</h1>
+    <p>Esta calculadora permite estimar o valor das férias proporcionais que você tem direito, de acordo com a Consolidação das Leis do Trabalho (CLT). Ela leva em conta o seu salário bruto e os meses trabalhados no ano. O cálculo é feito com base no valor das férias integrais, que corresponde ao salário bruto mais um terço, dividido por 12 e multiplicado pelos meses trabalhados.</p>
+    <br>
+    <h2>Para usar a calculadora, siga os seguintes passos:</h2>
+    <br>
+    <ol>
+        <li>Digite o valor do seu salário bruto (antes de descontos) no campo "Salário bruto (R$)".</li>
+        <br>
+        <li>Digite o número de meses que você trabalhou no ano no campo "Meses trabalhados".</li>
+        <br>
+        <li>Clique no botão "Calcular" para obter o valor das férias proporcionais.</li>
+        <br>
+        <li>O resultado será mostrado na caixa abaixo do botão, com o formato "Férias proporcionais: R$ X,XX".</li>
+        <br>
+    </ol>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="calculator">
+      <form id="form">
+          <input type="number" id="salario" placeholder="Salário bruto (R$)" min="0" step="0.01" required>
+          <input type="number" id="meses" placeholder="Meses trabalhados" min="0" max="12" step="1" required>
+          <button type="submit" class="button">Calcular</button>
+      </form>
+      <p id="resultado" class="display-box"></p>
+  </div>
+  <script>
+    // Função para calcular o valor das férias proporcionais
+    // Recebe como parâmetros o salário bruto e os meses trabalhados
+    function calcularFeriasProporcionais(salario, meses) {
+        // Valor das férias integrais: salário bruto mais um terço
+        var feriasIntegrais = salario + salario / 3;
+        // Valor das férias proporcionais: valor das férias integrais dividido por 12 e multiplicado pelos meses trabalhados
+        var feriasProporcionais = feriasIntegrais / 12 * meses;
+        // Retorna o valor das férias proporcionais
+        return feriasProporcionais;
+    }
+
+    // Seleciona o formulário e o elemento que mostra o resultado
+    var form = document.getElementById("form");
+    var resultado = document.getElementById("resultado");
+
+    // Adiciona um evento de submit ao formulário
+    form.addEventListener("submit", function(event) {
+        // Previne o comportamento padrão do formulário (recarregar a página)
+        event.preventDefault();
+        // Obtém os valores dos inputs
+        var salario = parseFloat(document.getElementById("salario").value);
+        var meses = parseInt(document.getElementById("meses").value);
+        // Verifica se os valores são válidos
+        if (isNaN(salario) || isNaN(meses)) {
+            // Mostra uma mensagem de erro
+            resultado.textContent = "Por favor, insira valores válidos.";
+        } else {
+            // Calcula o valor das férias proporcionais usando os valores como parâmetros
+            var ferias = calcularFeriasProporcionais(salario, meses);
+            // Mostra o resultado formatado com duas casas decimais
+            alert("Férias proporcionais: R$ " + ferias.toFixed(2));
+            location.reload();
+        }
+    });
+</script>
+{% endblock %}
