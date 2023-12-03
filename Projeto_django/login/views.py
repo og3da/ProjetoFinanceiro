@@ -5,6 +5,8 @@ from django.contrib import messages
 from .models import Usuario
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.models import User
+from django.contrib import auth
 #import logging
 
 #logger = logging.getLogger(__name__)
@@ -13,6 +15,10 @@ from django.views.decorators.csrf import csrf_exempt
 def login(request):
     template = loader.get_template('login.html')
     return HttpResponse(template.render())
+
+def logout(request):
+    auth.logout(request)
+    return redirect('main')
 
 @csrf_exempt
 def cadastrar_usuario(request):
@@ -36,17 +42,19 @@ def cadastrar_usuario(request):
             return render(request, 'login.html', {'mensagem': mensagem})
 
         # Cria um novo objeto Usuario e o salva no banco de dados
-        usuario = Usuario(nome=nome, email=email, senha=senha)
+        user = User.objects.create_user(email, email, senha)
+        user.save()
+        usuario = Usuario(nome=nome, email=email)
         usuario.save()
 
         # Retorna uma resposta indicando que o cadastro foi bem-sucedido
         print("Usuario Cadastrado")
-        mensagem = "Operação realizada com sucesso!"
+        mensagem = "Cadastro realizada com sucesso!"
         return render(request, 'login.html', {'mensagem': mensagem})
-
-    # Retorna uma resposta indicando que a requisição não é válida (não é um POST)
-    mensagem = "Método de requisição não permitido.!"
-    return render(request, 'login.html', {'mensagem': mensagem})
+    else:
+        # Retorna uma resposta indicando que a requisição não é válida (não é um POST)
+        mensagem = "Método de requisição não permitido.!"
+        return render(request, 'login.html', {'mensagem': mensagem})
 
 @csrf_exempt
 def login_usuario(request):
@@ -68,16 +76,21 @@ def login_usuario(request):
             mensagem = "O email não existe, cadastre-se!"
             return render(request, 'login.html', {'mensagem': mensagem})
 
-        # Verifique se a senha já está em uso
-        if not Usuario.objects.filter(senha=senha).exists():
-            print("Senha incorreta!")
-            mensagem = "Senha incorreta!"
-            return render(request, 'login.html', {'mensagem': mensagem})
+        print("AUTENTICANDO!")
+        user = auth.authenticate(request, username=email, password=senha)
+        if user is not None:
+            auth.login(request, user)
+            print("Login realizado com sucesso")
+            return redirect('home')
+        else:
+            error_message = 'Usuário ou senha inválidos'
+            print("Falha no login")
+            return render(request, 'login.html', {'error_message': error_message})
         
         print("Login Realizado!")
         mensagem = "Login Realizado!"
         return render(request, 'home.html', {'mensagem': mensagem})
-
-    # Retorna uma resposta indicando que a requisição não é válida (não é um POST)
-    mensagem = "Método de requisição não permitido.!"
-    return render(request, 'login.html', {'mensagem': mensagem})
+    else:
+        # Retorna uma resposta indicando que a requisição não é válida (não é um POST)
+        mensagem = "Método de requisição não permitido.!"
+        return render(request, 'login.html', {'mensagem': mensagem})

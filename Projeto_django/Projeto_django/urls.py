@@ -23,5 +23,6 @@ urlpatterns = [
     path('', include('calculadoras.urls')),
     path('', include('investimentos.urls')),
     path('', include('planFinanceiro.urls')),
+    path('', include('chatbot.urls')),
     path('admin/', admin.site.urls),
 ]
