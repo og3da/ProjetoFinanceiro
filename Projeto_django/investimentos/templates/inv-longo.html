@@ -1,129 +1,136 @@
-{% extends "master.html" %}
+{% extends 'master-generic.html' %}
 
 {% block title %}
-  INV LONGO PRAZO
+  INVESTIMENTO LONGO PRAZO
+{% endblock %}
+
+{% block styles %}
+  <style>
+    body {
+      background-color: #58af9b; /* Cor de fundo principal */
+      color: whitesmoke; /* Cor do texto */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    h1 {
+      color: black;
+      background-color: whitesmoke;
+      text-align: center;
+      padding: 20px;
+      font-size: 2.5em;
+      margin-bottom: 10px; /* Adicionando um espaço entre o título e o conteúdo */
+    }
+    
+    img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%; /* Garante que a imagem não ultrapasse o tamanho máximo da div pai */
+      height: auto; /* Mantém a proporção da imagem */
+      border-radius: 10px; /* Borda arredondada para a imagem */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra suave na imagem */
+    }
+    
+    p {
+      margin: 20px 0;
+      text-align: justify;
+    }
+    
+    table {
+      border-collapse: collapse;
+      width: 100%; /* Agora a tabela ocupa 100% da largura disponível */
+      margin-top: 20px;
+    }
+    
+    th,
+    td {
+      border: 1px solid #58af9b;
+      padding: 15px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: #58af9b;
+      color: #ecf0f1;
+      text-align: center;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #52a088;
+    }
+    
+    tr:nth-child(odd) {
+      background-color: #4c957f;
+    }
+    
+    p:last-of-type {
+      color: #ecf0f1;
+      padding: 10px;
+      text-align: center;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    
+    h2 {
+      color: whitesmoke;
+      margin-top: 20px;
+    }
+  </style>
 {% endblock %}
 
 {% block content %}
-    <h1 style="font-family: 'Arial Black', sans-serif; font-size: 3em; color: #fdfdfd; text-transform: uppercase; text-align: center; animation: escrevendo 4s steps(40) forwards;">Investimentos a longo prazo</h1>
-    <p>Investir a longo prazo é uma estratégia que visa obter retornos maiores e mais consistentes ao longo do tempo,
-        sem se preocupar com as oscilações do mercado no curto prazo. Investir a longo prazo requer paciência,
-        disciplina e planejamento, mas pode trazer muitos benefícios para quem quer construir um patrimônio sólido e
-        garantir uma renda futura.</p>
-        <div style="text-align: center;">
-            <img src="C:/Users/Pichau/OneDrive/Documentos/GitHub/ProjetoFinanceiro-master/projeto/img/int-longo.png" alt="Minha Imagem" style="display: inline-block;">
-        </div>
-    <h2>Como investir a longo prazo</h2>
-    <p>Para investir a longo prazo, é preciso seguir alguns passos básicos:</p>
-    <ul>
-        <li>Definir os seus objetivos financeiros e o seu perfil de risco</li>
-        <li>Escolher os ativos que se adequam ao seu perfil e aos seus objetivos</li>
-        <li>Montar uma carteira diversificada, com diferentes tipos de investimentos</li>
-        <li>Manter uma disciplina de aportes regulares e reinvestir os lucros</li>
-        <li>Acompanhar o desempenho da sua carteira e fazer ajustes quando necessário</li>
-    </ul>
-    <h2>Quais são os melhores investimentos para o longo prazo</h2>
-    <p>Não existe uma resposta única para essa pergunta, pois os melhores investimentos para o longo prazo dependem de
-        vários fatores, como o cenário econômico, as expectativas do mercado, as taxas de juros, a inflação, a
-        rentabilidade, o risco, a liquidez e a tributação de cada ativo. No entanto, alguns investimentos costumam se
-        destacar por apresentarem um bom potencial de valorização e de geração de renda no longo prazo. Alguns exemplos
-        são:</p>
-    <table>
-        <tr>
-            <th>Investimento</th>
-            <th>Características</th>
-            <th>Riscos</th>
-            <th>Rendimentos</th>
-        </tr>
-        <tr>
-            <td>Ações</td>
-            <td>São partes de empresas negociadas na bolsa de valores. Permitem ao investidor se tornar sócio de
-                empresas e participar dos seus lucros e do seu crescimento.</td>
-            <td>São considerados investimentos de alto risco, pois estão sujeitos às variações do mercado, à gestão das
-                empresas, à concorrência, à regulação, aos ciclos econômicos, entre outros fatores.</td>
-            <td>Os rendimentos das ações podem vir de duas formas: a valorização do preço das ações e o pagamento de
-                dividendos (parte dos lucros distribuídos aos acionistas).</td>
-        </tr>
-        <tr>
-            <td>Fundos imobiliários</td>
-            <td>São fundos que investem em imóveis ou em títulos relacionados ao setor imobiliário, como letras de
-                crédito imobiliário (LCI) e certificados de recebíveis imobiliários (CRI). Permitem ao investidor ter
-                acesso a uma renda proveniente de aluguéis ou de juros, sem ter que comprar ou administrar um imóvel.
-            </td>
-            <td>São considerados investimentos de médio a alto risco, pois estão sujeitos às variações do mercado, à
-                vacância, à inadimplência, à desvalorização dos imóveis, à regulação, entre outros fatores.</td>
-            <td>Os rendimentos dos fundos imobiliários podem vir de duas formas: a valorização das cotas dos fundos e o
-                pagamento de dividendos (parte dos aluguéis ou dos juros distribuídos aos cotistas).</td>
-        </tr>
-        <tr>
-            <td>Tesouro Direto</td>
-            <td>São títulos públicos emitidos pelo governo federal para financiar as suas atividades. Permitem ao
-                investidor emprestar dinheiro ao governo e receber juros em troca. São considerados os investimentos
-                mais seguros do país, pois têm a garantia do Tesouro Nacional.</td>
-            <td>São considerados investimentos de baixo risco, pois têm a garantia do governo. No entanto, podem sofrer
-                variações de preço no mercado secundário, dependendo das expectativas dos investidores e das taxas de
-                juros.</td>
-            <td>Os rendimentos dos títulos do Tesouro Direto dependem do tipo de título escolhido. Existem títulos
-                prefixados (com taxa de juros definida no momento da compra), pós-fixados (com taxa de juros que varia
-                de acordo com a Selic ou com o IPCA) e híbridos (com uma parte prefixada e outra pós-fixada).</td>
-        </tr>
-    </table>
-    <p>Esses são apenas alguns exemplos de investimentos a longo prazo. Existem muitos outros tipos de investimentos
-        disponíveis no mercado, como fundos de ações, fundos multimercado, debêntures, criptomoedas, ouro, entre outros.
-        O importante é que o investidor faça uma boa pesquisa, compare as opções e escolha aquelas que se encaixam
-        melhor nos seus objetivos e no seu perfil de risco.</p>
-    <h3>Objetivos financeiros e perfil de risco</h3> <!-- Adiciona um sub-subtítulo para a primeira subseção -->
-    <p>O primeiro passo para investir a longo prazo é definir os seus objetivos financeiros e o seu perfil de risco. Os
-        seus objetivos financeiros são as metas que você quer alcançar com o seu dinheiro, como comprar um imóvel, fazer
-        uma viagem, se aposentar, etc. O seu perfil de risco é o grau de tolerância que você tem em relação às possíveis
-        perdas que o seu investimento pode sofrer. O seu perfil de risco pode ser conservador, moderado ou arrojado,
-        dependendo de fatores como o seu conhecimento sobre o mercado, o seu horizonte de tempo, a sua renda, o seu
-        patrimônio, etc.</p>
-    <p>Os seus objetivos financeiros e o seu perfil de risco vão ajudar você a escolher os ativos que se adequam ao seu
-        perfil e aos seus objetivos. Por exemplo, se você tem um objetivo de longo prazo, como se aposentar, e um perfil
-        de risco moderado, você pode investir em ações de empresas sólidas e com bons dividendos, que podem valorizar e
-        gerar renda ao longo do tempo. Se você tem um objetivo de curto prazo, como fazer uma viagem, e um perfil de
-        risco conservador, você pode investir em títulos do Tesouro Direto, que têm baixo risco e boa liquidez.</p>
-    <h3>Ativos e carteira diversificada</h3> <!-- Adiciona um sub-subtítulo para a segunda subseção -->
-    <p>O segundo passo para investir a longo prazo é escolher os ativos que se adequam ao seu perfil e aos seus
-        objetivos. Os ativos são os bens ou direitos que você pode investir, como ações, fundos imobiliários, títulos
-        públicos, etc. Cada ativo tem as suas características, como rentabilidade, risco, liquidez e tributação, que
-        devem ser analisadas antes de investir. Você deve escolher os ativos que oferecem um bom equilíbrio entre
-        retorno e risco, de acordo com o seu perfil e os seus objetivos.</p>
-    <p>O terceiro passo para investir a longo prazo é montar uma carteira diversificada, com diferentes tipos de
-        investimentos. A diversificação é uma forma de reduzir o risco da sua carteira, pois você não fica dependente de
-        um único ativo ou de um único setor. Ao diversificar, você pode aproveitar as oportunidades de diferentes
-        mercados e reduzir o impacto de possíveis perdas. Você deve diversificar a sua carteira de acordo com o seu
-        perfil e os seus objetivos, buscando ativos que tenham baixa correlação entre si, ou seja, que não se movimentem
-        na mesma direção e na mesma intensidade.</p>
-    <h3>Aportes regulares e reinvestimento dos lucros</h3> <!-- Adiciona um sub-subtítulo para a terceira subseção -->
-    <p>O quarto passo para investir a longo prazo é manter uma disciplina de aportes regulares e reinvestir os lucros.
-        Os aportes regulares são os depósitos que você faz na sua carteira periodicamente, como mensalmente,
-        trimestralmente, anualmente, etc. Os aportes regulares permitem que você aproveite as oscilações do mercado e
-        compre mais ativos quando eles estão baratos e menos ativos quando eles estão caros. Isso aumenta o seu
-        potencial de retorno no longo prazo. O reinvestimento dos lucros é a prática de usar os rendimentos dos seus
-        investimentos, como dividendos, juros, aluguéis, etc., para comprar mais ativos. O reinvestimento dos lucros
-        permite que você aumente o seu patrimônio e acelere o seu crescimento no longo prazo.</p>
-    <h3>Acompanhamento e ajustes</h3> <!-- Adiciona um sub-subtítulo para a quarta subseção -->
-    <p>O quinto passo para investir a longo prazo é acompanhar o desempenho da sua carteira e fazer ajustes quando
-        necessário. O acompanhamento é a prática de verificar periodicamente como os seus investimentos estão se
-        comportando, se eles estão atingindo os seus objetivos, se eles estão alinhados com o seu perfil de risco, etc.
-        O acompanhamento permite que você identifique possíveis problemas ou oportunidades na sua carteira e tome as
-        decisões adequadas. Os ajustes são as mudanças que você faz na sua carteira, como vender, comprar ou trocar
-        ativos, alterar a proporção entre eles, etc. Os ajustes permitem que você mantenha a sua carteira equilibrada e
-        adequada ao seu perfil e aos seus objetivos.</p>
-    <h2>Conclusão</h2>
-    <p>Investir a longo prazo é uma forma de buscar retornos maiores e mais consistentes ao longo do tempo, sem se
-        preocupar com as oscilações do mercado no curto prazo. Para investir a longo prazo, é preciso definir os seus
-        objetivos financeiros e o seu perfil de risco, escolher os ativos que se adequam ao seu perfil e aos seus
-        objetivos, montar uma carteira diversificada, manter uma disciplina de aportes regulares e reinvestir os lucros,
-        acompanhar o desempenho da sua carteira e fazer ajustes quando necessário. Os melhores investimentos para o
-        longo prazo dependem de vários fatores, como o cenário econômico, as expectativas do mercado, as taxas de juros,
-        a inflação, a rentabilidade, o risco, a liquidez e a tributação de cada ativo. Alguns exemplos de investimentos
-        a longo prazo são ações, fundos imobiliários e Tesouro Direto. No entanto, existem muitos outros tipos de
-        investimentos disponíveis no mercado, que devem ser pesquisados e comparados pelo investidor. Lembre-se de que
-        investir a longo prazo requer paciência, disciplina e planejamento, mas pode trazer muitos benefícios para quem
-        quer construir um patrimônio sólido e garantir uma renda futura.</p>
-        <p>Se você quiser saber mais sobre investimentos a longo prazo,
-          você pode fazer o login na nossa pagina e ter conteudo personalizado com o nosso ChatBoot. Tenha um ótimo dia! 😊</p>
+  <br>
+  <h1>Investimentos a Longo Prazo</h1>
+  <p>Investir a longo prazo é uma estratégia voltada para obter retornos consistentes ao longo do tempo, sem se preocupar com as oscilações do mercado a curto prazo. Essa abordagem requer paciência, disciplina e planejamento, oferecendo benefícios significativos para quem busca construir um patrimônio sólido e garantir uma renda futura.</p>
+  <div style="text-align: center;">
+    <img src="../static/img/int-longo.png" alt="Minha Imagem" style="display: inline-block;" />
+  </div>
+  <h2>Como Investir a Longo Prazo</h2>
+  <p>Para investir a longo prazo, é essencial seguir alguns passos fundamentais:</p>
+  <ul>
+    <li>Definir objetivos financeiros e perfil de risco</li>
+    <li>Escolher ativos adequados aos objetivos e perfil</li>
+    <li>Construir uma carteira diversificada com diferentes tipos de investimentos</li>
+    <li>Manter uma disciplina de aportes regulares e reinvestir os lucros</li>
+    <li>Acompanhar o desempenho da carteira e fazer ajustes quando necessário</li>
+  </ul>
+  <h2>Melhores Investimentos para o Longo Prazo</h2>
+  <p>Não há uma resposta única para essa pergunta, pois os melhores investimentos para o longo prazo dependem de vários fatores, como cenário econômico, expectativas do mercado, taxas de juros, inflação, rentabilidade, risco, liquidez e tributação de cada ativo. No entanto, alguns investimentos costumam se destacar devido ao seu potencial de valorização e geração de renda a longo prazo. Alguns exemplos incluem:</p>
+  <table>
+    <tr>
+      <th>Investimento</th>
+      <th>Características</th>
+      <th>Riscos</th>
+      <th>Rendimentos</th>
+    </tr>
+    <tr>
+      <td>Ações</td>
+      <td>São partes de empresas negociadas na bolsa de valores, permitindo ao investidor tornar-se sócio e participar dos lucros e crescimento das empresas.</td>
+      <td>Considerados investimentos de alto risco, sujeitos às variações do mercado, gestão das empresas, concorrência, regulação, ciclos econômicos, entre outros fatores.</td>
+      <td>Rendimentos podem vir da valorização das ações e pagamento de dividendos.</td>
+    </tr>
+    <tr>
+      <td>Fundos Imobiliários</td>
+      <td>Fundos que investem em imóveis ou títulos relacionados ao setor imobiliário, proporcionando renda proveniente de aluguéis ou juros, sem a necessidade de administrar um imóvel.</td>
+      <td>Considerados investimentos de médio a alto risco, sujeitos às variações do mercado, vacância, inadimplência, desvalorização dos imóveis, regulação, entre outros fatores.</td>
+      <td>Rendimentos podem vir da valorização das cotas e pagamento de dividendos.</td>
+    </tr>
+    <tr>
+      <td>Tesouro Direto</td>
+      <td>Títulos públicos emitidos pelo governo federal, garantindo ao investidor emprestar dinheiro ao governo e receber juros em troca.</td>
+      <td>Considerados investimentos de baixo risco, com garantia do governo, mas sujeitos a variações de preço no mercado secundário.</td>
+      <td>Rendimentos dependem do tipo de título escolhido, como prefixados, pós-fixados ou híbridos.</td>
+    </tr>
+  </table>
+  <p>Esses são apenas alguns exemplos de investimentos a longo prazo. Há muitos outros disponíveis no mercado, como fundos de ações, fundos multimercado, debêntures, criptomoedas, ouro, entre outros. O importante é que o investidor realize uma pesquisa detalhada, compare as opções e escolha aquelas que melhor se adequam aos seus objetivos e perfil de risco.</p>
+  <h3>Objetivos Financeiros e Perfil de Risco</h3>
+  <p>O primeiro passo para investir a longo prazo é definir objetivos financeiros e perfil de risco. Objetivos financeiros são metas, como comprar um imóvel, fazer uma viagem ou se aposentar. O perfil de risco, conservador, moderado ou arrojado, é determinado por fatores como conhecimento de mercado, horizonte de tempo, renda e patrimônio.</p>
+  <p>Esses elementos orientam a escolha de ativos adequados aos objetivos e perfil. Por exemplo, objetivos de longo prazo com perfil moderado podem envolver investimentos em ações de empresas sólidas, proporcionando potencial de valorização e renda ao longo do tempo. Já objetivos de curto prazo com perfil conservador podem ser atendidos por investimentos em títulos do Tesouro Direto, com baixo risco e boa liquidez.</p>
+  <h3>Ativos e Carteira Diversificada</h3>
+  <p>O segundo passo é escolher ativos que se alinhem ao perfil e objetivos. Cada ativo possui características como rentabilidade, risco, liquidez e tributação, que devem ser analisadas. A construção de uma carteira diversificada, com diferentes tipos de investimentos, reduz o risco ao evitar dependência de um único ativo ou setor. A diversificação deve considerar ativos com baixa correlação, que não se movimentem na mesma direção e intensidade.</p>
+  <h3>Aportes Regulares e Reinvestimento dos Lucros</h3>
+  <p>O quarto passo é manter disciplina com aportes regulares e reinvestir os lucros. Aportes regulares permitem aproveitar as oscilações do mercado, comprando mais ativos quando estão mais acessíveis. O reinvestimento dos lucros, provenientes de dividendos, juros, aluguéis, entre outros, contribui para o aumento do patrimônio e aceleração do crescimento no longo prazo.</p>
+  <h3>Acompanhamento e Ajustes</h3>
+  <p>O quinto passo é acompanhar o desempenho da carteira e realizar ajustes quando necessário. O acompanhamento regular permite identificar problemas ou oportunidades, enquanto os ajustes, como compra, venda ou troca de ativos, garantem a manutenção do equilíbrio da carteira conforme o perfil e objetivos do investidor.</p>
+  <h2>Conclusão</h2>
+  <p>Investir a longo prazo é buscar retornos consistentes ao longo do tempo, priorizando objetivos financeiros e perfil de risco. Os melhores investimentos dependem de diversos fatores, exigindo pesquisa e comparação. Paciência, disciplina e planejamento são essenciais, mas os benefícios incluem a construção de um patrimônio sólido e a garantia de uma renda futura.</p>
 {% endblock %}
