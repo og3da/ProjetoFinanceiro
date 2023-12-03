@@ -13,4 +13,4 @@ def inv_curto_prazo(request):
 
 def logout(request):
     auth.logout(request)
-    return redirect('login')
+    return redirect('home')
