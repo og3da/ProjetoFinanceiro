@@ -1,10 +1,14 @@
 from django.http import HttpResponse
 from django.template import loader
+from django.contrib import auth
+from django.shortcuts import render, redirect
 
 def main(request):
-    template = loader.get_template('principal.html')
-    return HttpResponse(template.render())
+    return render(request, 'principal.html')
 
 def home(request):
-    template = loader.get_template('home.html')
-    return HttpResponse(template.render())
+    return render(request, 'home.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('login')

@@ -1,15 +1,16 @@
-from django.http import HttpResponse
-from django.template import loader
+from django.contrib import auth
+from django.shortcuts import render, redirect
 
 # Create your views here.
 def tesouro_direto(request):
-    template = loader.get_template('tesouro-direto.html')
-    return HttpResponse(template.render())
+    return render(request, 'tesouro-direto.html')
 
 def inv_longo_prazo(request):
-    template = loader.get_template('inv-longo.html')
-    return HttpResponse(template.render())
+    return render(request, 'inv-longo.html')
 
 def inv_curto_prazo(request):
-    template = loader.get_template('inv-curto.html')
-    return HttpResponse(template.render())
+    return render(request, 'inv-curto.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('login')

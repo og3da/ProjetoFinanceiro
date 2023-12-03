@@ -1,11 +1,13 @@
-from django.http import HttpResponse
-from django.template import loader
+from django.contrib import auth
+from django.shortcuts import render, redirect
 
 
 def aprenda_economizar(request):
-    template = loader.get_template('plan-eco.html')
-    return HttpResponse(template.render())
+    return render(request, 'plan-eco.html')
 
 def negociar_dividas(request):
-    template = loader.get_template('plan-div.html')
-    return HttpResponse(template.render())
+    return render(request, 'plan-div.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('login')
