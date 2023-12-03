@@ -1,85 +1,170 @@
-{% extends "master.html" %}
+{% extends 'master-generic.html' %}
 
 {% block title %}
   SALÁRIO LÍQUIDO
 {% endblock %}
 
+{% block styles %}
+  <style>
+    body {
+      background-color: #58af9b;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    
+    h1,
+    h2 {
+      text-align: center;
+    }
+    
+    p {
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    
+    ol {
+      max-width: 600px;
+      margin: 0 auto;
+      padding-left: 20px;
+    }
+    
+    .calculator {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+      max-width: 400px;
+      width: 100%;
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    button {
+      background-color: #58af9b;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #3e8e7f;
+    }
+    
+    .display-box {
+      margin-top: 20px;
+      font-weight: bold;
+      color: black;
+    }
+    
+    .calculator input {
+      color: black;
+    }
+  </style>
+{% endblock %}
+
 {% block content %}
-    <h1
-      style="
-        font-family: 'Arial Black', sans-serif;
-        font-size: 3em;
-        color: #fdfdfd;
-        text-transform: uppercase;
-        text-align: center;
-        animation: escrevendo 4s steps(40) forwards;
-      "
-    >
-      Calculadora de saldo líquido
-    </h1>
-    <p>
-      Esta calculadora permite que você calcule o seu saldo líquido, ou seja, a
-      diferença entre a sua receita e a sua despesa, já descontando o imposto. O
-      saldo líquido é um indicador da sua saúde financeira, pois mostra quanto
-      você realmente ganha ou perde no final do mês.
-    </p>
-    <br />
-    <h2>Para usar a calculadora, siga os seguintes passos:</h2>
-    <br />
-    <ol>
-      <li>
-        Digite a sua receita mensal no campo "Digite a sua receita mensal". A
-        receita é o valor total que você recebe por mês, incluindo salário,
-        rendimentos, aluguéis, pensões, etc.
-      </li>
-      <br />
-      <li>
-        Digite a sua despesa mensal no campo "Digite a sua despesa mensal". A
-        despesa é o valor total que você gasta por mês, incluindo aluguel, água,
-        luz, telefone, internet, alimentação, transporte, lazer, etc.
-      </li>
-      <br />
-      <li>
-        Digite o valor do imposto pago no campo "Digite o valor do imposto
-        pago". O imposto é o valor que você paga ao governo por mês, incluindo
-        imposto de renda, INSS, IPTU, IPVA, etc.
-      </li>
-      <br />
-      <li>
-        Clique no botão "Calcular". A calculadora vai mostrar o seu saldo
-        líquido em uma janela de alerta.
-      </li>
-      <br />
-    </ol>
-    <br />
-    <br />
-    <br />
-    <br />
-    <form>
-      <input
-        type="number"
-        id="receita"
-        placeholder="Digite a sua receita mensal"
-      />
-      <input
-        type="number"
-        id="despesa"
-        placeholder="Digite a sua despesa mensal"
-      />
-      <input
-        type="number"
-        id="imposto"
-        placeholder="Digite o valor do imposto pago"
-      />
+  <h1>Calculadora de Salário Líquido</h1>
+  <p>Esta calculadora permite que você calcule o seu salário líquido, considerando o valor do imposto pago, basta inserir seu salário bruto. O salário líquido é o valor que você realmente recebe após descontos.</p>
+
+  <h2>Como usar a calculadora:</h2>
+
+  <ol>
+    <li>Digite o seu salário bruto no campo "Digite o seu salário bruto".</li>
+    <li>Clique no botão "Calcular". A calculadora mostrará o seu salário líquido.</li>
+  </ol>
+
+  <div class="calculator">
+    <form id="form">
+      <input type="number" id="salarioBruto" placeholder="Digite o seu salário bruto" required />
+      <input type="number" id="dependentes" placeholder="Número de dependentes (opcional)" />
+      <input type="number" id="outrosDescontos" placeholder="Outros descontos (opcional)" />
       <button onclick="calcular()">Calcular</button>
+      <button type="button" onclick="limparCampos()">Limpar</button>
     </form>
-    <script>
-      function calcular() {
-        var receita = parseFloat(document.getElementById("receita").value);
-        var despesa = parseFloat(document.getElementById("despesa").value);
-        var imposto = parseFloat(document.getElementById("imposto").value);
-        var saldo = receita - despesa - imposto;
-        alert("O seu saldo líquido é: R$ " + saldo.toFixed(2));
+    <p id="resultado" class="display-box"></p>
+  </div>
+
+  <script>
+    function calcular() {
+      var salarioBruto = parseFloat(document.getElementById('salarioBruto').value)
+      var dependentes = parseInt(document.getElementById('dependentes').value) || 0
+      var outrosDescontos = parseFloat(document.getElementById('outrosDescontos').value) || 0
+    
+      if (isNaN(salarioBruto)) {
+        alert('Por favor, preencha todos os campos com valores numéricos.')
+        return
       }
-    </script>
+    
+      var aliquotaINSS
+      if (salarioBruto <= 1320) {
+        aliquotaINSS = 0.075
+      } else if (salarioBruto <= 2571.29) {
+        aliquotaINSS = 0.09
+      } else if (salarioBruto <= 3856.94) {
+        aliquotaINSS = 0.12
+      } else {
+        aliquotaINSS = 0.14
+      }
+    
+      var descontoINSS = salarioBruto * aliquotaINSS
+      var baseCalculoIR = salarioBruto - descontoINSS - dependentes * 189.59
+    
+      var aliquotaIR
+      var deducaoIR
+      if (baseCalculoIR <= 2112) {
+        aliquotaIR = 0
+        deducaoIR = 0
+      } else if (baseCalculoIR <= 2826.65) {
+        aliquotaIR = 0.075
+        deducaoIR = 158.4
+      } else if (baseCalculoIR <= 3751.05) {
+        aliquotaIR = 0.15
+        deducaoIR = 370.4
+      } else if (baseCalculoIR <= 4664.68) {
+        aliquotaIR = 0.225
+        deducaoIR = 651.73
+      } else {
+        aliquotaIR = 0.275
+        deducaoIR = 884.96
+      }
+    
+      var descontoIR = baseCalculoIR * aliquotaIR - deducaoIR
+      var salarioLiquido = salarioBruto - descontoINSS - descontoIR - outrosDescontos
+    
+      var form = document.getElementById('form')
+      var resultado = document.getElementById('resultado')
+    
+      form.addEventListener('submit', function (event) {
+        event.preventDefault()
+        resultado.textContent = 'Salário líquido: R$ ' + salarioLiquido.toFixed(2)
+      })
+    }
+    
+    function limparCampos() {
+      document.getElementById('salarioBruto').value = ''
+      document.getElementById('dependentes').value = ''
+      document.getElementById('outrosDescontos').value = ''
+      document.getElementById('resultado').textContent = ''
+    }
+  </script>
 {% endblock %}

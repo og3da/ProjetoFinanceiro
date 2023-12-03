@@ -1,96 +1,150 @@
-{% extends 'master.html' %}
+{% extends 'master-generic.html' %}
 
 {% block title %}
   IMPOSTO DE RENDA
 {% endblock %}
 
+{% block styles %}
+  <style>
+    body {
+      background-color: #58af9b;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    
+    h1,
+    h2 {
+      text-align: center;
+    }
+    
+    p {
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    
+    ol {
+      max-width: 600px;
+      margin: 0 auto;
+      padding-left: 20px;
+    }
+    
+    .calculator {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+      max-width: 400px;
+      width: 100%;
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    button {
+      background-color: #58af9b;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #3e8e7f;
+    }
+    
+    .display-box {
+      margin-top: 20px;
+      font-weight: bold;
+      color: black;
+    }
+    
+    .calculator input {
+      color: black;
+    }
+  </style>
+{% endblock %}
+
 {% block content %}
-    <h1 style="font-family: 'Arial Black', sans-serif; font-size: 3em; color: #fdfdfd; text-transform: uppercase; text-align: center; animation: escrevendo 4s steps(40) forwards;">Calculadora de imposto de renda</h1>
-    <p>Esta calculadora permite estimar o valor do imposto de renda que você deve pagar mensalmente, de acordo com a tabela progressiva do IRPF. Ela leva em conta o seu salário bruto e o número de dependentes que você tem. O cálculo é feito com base nas alíquotas e nas parcelas a deduzir do imposto, conforme a faixa de renda em que você se enquadra.</p>
-    <br />
-    <h2>Para usar a calculadora, siga os seguintes passos:</h2>
-    <br />
-    <ol>
-      <li>Digite o valor do seu salário bruto (antes de descontos) no campo "Salário bruto (R$)".</li>
-      <br />
-      <li>Digite o número de dependentes que você tem no campo "Número de dependentes".</li>
-      <br />
-      <li>Clique no botão "Calcular" para obter o valor do imposto de renda.</li>
-      <br />
-      <li>O resultado será mostrado na caixa abaixo do botão, com o formato "Imposto de renda: R$ X,XX".</li>
-      <br />
-    </ol>
-    <br />
-    <br />
-    <br />
-    <br />
-    <div class="calculator">
-      <form id="form">
-        <input type="number" id="salario" placeholder="Salário bruto (R$)" min="0" step="0.01" required />
-        <input type="number" id="dependentes" placeholder="Número de dependentes" min="0" step="1" required />
-        <button type="submit" class="button">Calcular</button>
-      </form>
-      <p id="resultado" class="display-box"></p>
-    </div>
-    <script>
-      function calcularIRPF(salario, dependentes) {
-        // Dedução por dependente: R$ 189,59
-        var deducao = dependentes * 189.59
-        // Base de cálculo: salário bruto menos a dedução
-        var base = salario - deducao
-        // Alíquota e parcela a deduzir do imposto
-        var aliquota, parcela
-        if (base <= 1903.98) {
-          // Isento
-          aliquota = 0
-          parcela = 0
-        } else if (base <= 2826.65) {
-          // 7,5%
-          aliquota = 0.075
-          parcela = 142.8
-        } else if (base <= 3751.05) {
-          // 15%
-          aliquota = 0.15
-          parcela = 354.8
-        } else if (base <= 4664.68) {
-          // 22,5%
-          aliquota = 0.225
-          parcela = 636.13
-        } else {
-          // 27,5%
-          aliquota = 0.275
-          parcela = 869.36
-        }
-        // Imposto de renda: base de cálculo vezes a alíquota menos a parcela a deduzir
-        var imposto = base * aliquota - parcela
-        // Retorna o valor do imposto
-        return imposto
+  <h1>Calculadora de imposto de renda</h1>
+  <p>Esta calculadora permite estimar o valor do imposto de renda que você deve pagar mensalmente, de acordo com a tabela progressiva do IRPF. Ela leva em conta o seu salário bruto e o número de dependentes que você tem. O cálculo é feito com base nas alíquotas e nas parcelas a deduzir do imposto, conforme a faixa de renda em que você se enquadra.</p>
+
+  <h2>Para usar a calculadora, siga os seguintes passos:</h2>
+
+  <ol>
+    <li>Digite o valor do seu salário bruto (antes de descontos) no campo "Salário bruto (R$)".</li>
+    <li>Digite o número de dependentes que você tem no campo "Número de dependentes".</li>
+    <li>Clique no botão "Calcular" para obter o valor do imposto de renda.</li>
+    <li>O resultado será mostrado na caixa abaixo do botão, com o formato "Imposto de renda: R$ X,XX".</li>
+  </ol>
+
+  <div class="calculator">
+    <form id="form">
+      <input type="number" id="salario" placeholder="Salário bruto (R$)" min="0" step="0.01" required />
+      <input type="number" id="dependentes" placeholder="Número de dependentes" min="0" step="1" required />
+      <button type="submit" class="button">Calcular</button>
+    </form>
+    <p id="resultado" class="display-box"></p>
+  </div>
+
+  <script>
+    function calcularIRPF(salario, dependentes) {
+      var deducao = dependentes * 189.59
+      var base = salario - deducao
+      var aliquota, parcela
+    
+      if (base <= 1903.98) {
+        aliquota = 0
+        parcela = 0
+      } else if (base <= 2826.65) {
+        aliquota = 0.075
+        parcela = 142.8
+      } else if (base <= 3751.05) {
+        aliquota = 0.15
+        parcela = 354.8
+      } else if (base <= 4664.68) {
+        aliquota = 0.225
+        parcela = 636.13
+      } else {
+        aliquota = 0.275
+        parcela = 869.36
       }
-      
-      // Seleciona o formulário e o elemento que mostra o resultado
-      var form = document.getElementById('form')
-      var resultado = document.getElementById('resultado')
-      
-      // Adiciona um evento de submit ao formulário
-      form.addEventListener('submit', function (event) {
-        // Previne o comportamento padrão do formulário (recarregar a página)
-        event.preventDefault()
-        // Obtém os valores dos inputs
-        var salario = parseFloat(document.getElementById('salario').value)
-        var dependentes = parseInt(document.getElementById('dependentes').value)
-        // Verifica se os valores são válidos
-        if (isNaN(salario) || isNaN(dependentes)) {
-          // Mostra uma mensagem de erro
-          resultado.textContent = 'Por favor, insira valores válidos.'
-        } else {
-          // Calcula o imposto de renda usando os valores como parâmetros
-          var imposto = calcularIRPF(salario, dependentes)
-          // Calcula o saldo líquido: salário bruto menos o imposto de renda
-          var saldo = salario - imposto
-          // Mostra o resultado em um alerta com o formato "O seu imposto de renda é: R$ X,XX"
-          alert('O seu imposto de renda é: R$ ' + imposto.toFixed(2))
-          location.reload()
-        }
-      })
-    </script>
+    
+      var imposto = base * aliquota - parcela
+      return imposto
+    }
+    
+    var form = document.getElementById('form')
+    var resultado = document.getElementById('resultado')
+    
+    form.addEventListener('submit', function (event) {
+      event.preventDefault()
+      var salario = parseFloat(document.getElementById('salario').value)
+      var dependentes = parseInt(document.getElementById('dependentes').value)
+    
+      if (isNaN(salario) || isNaN(dependentes)) {
+        resultado.textContent = 'Por favor, insira valores válidos.'
+      } else {
+        var imposto = calcularIRPF(salario, dependentes)
+        resultado.textContent = 'Imposto de renda: R$ ' + imposto.toFixed(2)
+      }
+    })
+  </script>
 {% endblock %}
