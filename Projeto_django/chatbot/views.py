@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 import openai
+from django.utils import timezone
 
 from django.contrib import auth
 from django.contrib.auth.models import User
@@ -25,6 +26,10 @@ def ask_openai(message):
 
 # Create your views here.
 def chatbot(request):
+    # Adiciona uma mensagem informativa se o usuário não estiver autenticado
+    if not request.user.is_authenticated:
+        return redirect('login') # Para usar o IA assistente financeiro, é necessário fazer login.
+
     chats = Chat.objects.filter(user=request.user)
 
     if request.method == 'POST':
@@ -34,6 +39,7 @@ def chatbot(request):
         chat = Chat(user=request.user, message=message, response=response, created_at=timezone.now())
         chat.save()
         return JsonResponse({'message': message, 'response': response})
+
     return render(request, 'chatbot.html', {'chats': chats})
 
 def logout(request):
