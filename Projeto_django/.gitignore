@@ -1,0 +1,17 @@
+#Projeto_django/Projeto_django/settings.py
+venv/
+debug.log
+Projeto_django/__pycache__
+planFinanceiro/__pycache__
+calculadoras/__pycache__
+chatbot/__pycache__
+investimentos/__pycache__
+login/__pycache__
+main/__pycache__
+Projeto_django/migrations/__pycache__
+planFinanceiro/migrations/__pycache__
+calculadoras/migrations/__pycache__
+chatbot/migrations/__pycache__
+investimentos/migrations/__pycache__
+login/migrations/__pycache__
+main/migrations/__pycache__
