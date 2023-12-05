@@ -26,7 +26,6 @@ def ask_openai(message):
 
 # Create your views here.
 def chatbot(request):
-    # Adiciona uma mensagem informativa se o usuário não estiver autenticado
     if not request.user.is_authenticated:
         return redirect('login') # Para usar o IA assistente financeiro, é necessário fazer login.
 

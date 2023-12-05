@@ -83,9 +83,9 @@ def login_usuario(request):
             print("Login realizado com sucesso")
             return redirect('home')
         else:
-            error_message = 'Usuário ou senha inválidos'
             print("Falha no login")
-            return render(request, 'login.html', {'error_message': error_message})
+            mensagem = 'Usuário ou senha inválidos'
+            return render(request, 'login.html', {'mensagem': mensagem})
         
         print("Login Realizado!")
         mensagem = "Login Realizado!"
