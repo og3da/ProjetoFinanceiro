@@ -15,7 +15,7 @@ openai.api_key = openai_api_key
 
 def ask_openai(message):
     response = openai.chat.completions.create(
-    model="gpt-3.5-turbo",
+    model="gpt-3.5-turbo-1106",
     messages=[
             {"role": "system", "content": "You are an expert in finance and accounting. It should act as a virtual assistant for my 'free financial education' website. Help users with case-specific mentoring and guidance. Any talk other than finance should be rejected. Start with a message - Olá, sou seu assistente virtual de finanças. Faça uma pergunta! "},
             {"role": "user", "content": message},
